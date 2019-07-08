@@ -12,7 +12,7 @@ var sassFiles = 'source/scss/**/*.scss',
 	mainSassFile = 'source/scss/style.scss',
 	cssFiles = '.',
 	sourceMaps = '/source/maps',
-	styleSheet = '/wp-content/themes/wordpress/style.css'
+	styleSheet = '/wp-content/themes/ming-johanson/style.css'
 currentDate = new Date().toISOString()
 
 //Compile main sass into css
@@ -28,14 +28,14 @@ function sassy() {
 //Watch for changes in sass files and running sass compile
 function watch() {
 	browserSync.init({
-		proxy: 'http://wordpress.local'
+		proxy: 'http://mingjohanson.local/'
 	  });
 
 	gulp.watch(sassFiles, sassy)
 	gulp.watch([
 		"./*.php",
 		"./layouts/**/*.php",
-		"./parts/**/*.php",
+		"./partials/**/*.php",
 		"./woocommerce/**/*.php",
 		"./source/scss/**/*.scss"
 	]).on("change", reload)

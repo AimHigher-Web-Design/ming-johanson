@@ -95,7 +95,7 @@
         ?> 
         <style type="text/css"> 
             body.login div#login h1 a {
-                background-image: url('/wp-content/themes/wordpress/resources/img/aimhigher.svg');
+                background-image: url('/wp-content/themes/ming-johanson/resources/img/aimhigher.svg');
                 background-position: center;
                 background-size: contain;
                 padding-bottom: 30px; 

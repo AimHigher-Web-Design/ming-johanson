@@ -3,7 +3,7 @@
  * The header template
  *
  *
- * @package WordPress Starter Kit
+ * @package Ming Johanson
  * @version 1.0
  */
 ?>
@@ -13,9 +13,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="profile" href="http://gmpg.org/xfn/11" />
 
-        <link href="/wp-content/themes/wordpress/style.css" rel="stylesheet" />
+        <link href="/wp-content/themes/ming-johanson/style.css" rel="stylesheet" />
         
-        <title>WordPress Template</title>
+        <title>Ming Johanson</title>
         <meta name="description" content="WordPress Template" />
 
         <meta property="og:title" content="WordPress Template" />
@@ -53,4 +53,4 @@
         </div>
     </header>
 
-    <div class="wrap">
+    <main>

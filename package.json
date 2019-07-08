@@ -1,10 +1,10 @@
 {
-  "name": "wordpress",
-  "version": "2.0.0",
-  "description": "Custom WordPress Template",
+  "name": "ming-johanson",
+  "version": "1.0.0",
+  "description": "Custom WordPress Template for Ming Johanson",
   "repository": {
     "type": "git",
-    "url": "git@github.com:AimHigher-Web-Design/wordpress.git"
+    "url": "git@github.com:AimHigher-Web-Design/ming-johanson.git"
   },
   "scripts": {
     "start": "gulp sassy && gulp watch",
