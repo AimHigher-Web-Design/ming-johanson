@@ -1,8 +1,15 @@
 
 header {
-  nav {
-    li {
-      font-size: 1.3em;
+
+  a {
+
+    &.site-logo {
+
+      img,
+      svg {
+        width: 20vw;
+        max-width: 500px;
+      }
     }
   }
 }
