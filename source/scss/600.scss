@@ -1,42 +1,31 @@
-.menu {
-    &.main {
-        ul {
-            display: flex;
-        }
+header {
 
-        li {
-            a {
-                font-size: 1em;
-                margin: 0 10px;
-                padding: 10px 0 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-                &:active, &:hover, &:focus {
-                    background: none;
-                    border-bottom: 2px solid $primary_dark_50;
-                    color: $primary_dark_50;
-                    padding-bottom: 10px;
-                }
-            }
-        }
+  a {
+
+    &.site-logo {
+
+      img,
+      svg {
+        margin-bottom: 0;
+      }
     }
-}
+  }
 
-.nav-main {
-    .hamburger {
-        display: none;
-    }
-
-    nav {
-        display: block;
-    }
+  nav {
+    height: 100%;
+  }
 }
 
 footer {
-    justify-content: space-between;
+  justify-content: space-between;
 
-    nav.menu {
-        &.footer {
-            width: 40%;
-        }
+  nav.menu {
+    &.footer {
+      width: 40%;
     }
+  }
 }

@@ -1,10 +1,15 @@
 
-.menu {
-    &.main {
-        li {
-            a {
-                font-size: 1.3em;
-            }
-        }
+header {
+
+  a {
+
+    &.site-logo {
+
+      img,
+      svg {
+        width: 20vw;
+        max-width: 500px;
+      }
     }
+  }
 }

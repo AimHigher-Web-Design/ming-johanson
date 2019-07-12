@@ -1,3 +1,17 @@
+header {
+
+  a {
+
+    &.site-logo {
+      
+      img,
+      svg {
+        height: 20%;
+      }
+    }
+  }
+}
+
 footer {
     nav.menu {
         &.social {
