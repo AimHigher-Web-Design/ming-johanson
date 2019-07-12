@@ -303,7 +303,7 @@
                         'id' => '',
                     ),
                     'default_value' => '',
-                    'placeholder' => '"Now Ron, the Sorting\' much more important than food"',
+                    'placeholder' => '"Now Ron, the Sorting\'s much more important than food"',
                     'prepend' => '',
                     'append' => '',
                     'maxlength' => '',
