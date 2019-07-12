@@ -42,12 +42,11 @@
             </div>
 
             <div id="nav-main" class="nav-main">
-                <button class="hamburger" onClick='mobileMenu()'><span class="open">&#x2630</span><span class="close">&#xd7</span></button>
                 <?php wp_nav_menu(array(
                     'theme_location' => 'main_menu',
                     'container' => 'nav',
                     'container_class' => 'menu main'
-                    )); 
+                    ));
                 ?>
             </div>
         </div>

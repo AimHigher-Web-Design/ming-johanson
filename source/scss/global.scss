@@ -62,11 +62,16 @@ h5 {
 }
 
 a {
-    color: $primary_dark_90;
+    font: $font_headings;
+    color: $secondary;
+    padding: 10px;
+    text-decoration: underline;
     text-decoration-skip-ink: auto;
 
     &:active, &:hover, &:focus {
-        color: $secondary_dark_90;
+        background-color: $primary_light_50;
+        text-decoration: none;
+        outline: none;
     }
 }
 

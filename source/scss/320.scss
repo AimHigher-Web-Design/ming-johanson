@@ -1,106 +1,44 @@
 header {
+
   @include transp-background();
   height: $height_header;
-  width: 100vw;
-  padding: 10px 20px;
-  display: flex;
   align-items: center;
-  justify-content: space-between;
 
-  .site-logo {
-    height: 100%;
-    z-index: -1;
+  .wrap {
 
-    img,
-    svg {
-      max-height: 100%;
-    }
-  }
-}
+    width: 100%;
 
-.menu {
-  &.main {
-    li {
-        a {
-            color: $primary_dark_50;
-            display: block;
-            font: $font_headings;
-            font-size: 1.5em;
-            padding: 10px 20px 12px;
-            text-decoration: none;
+    .site-logo {
+      height: 80%;
 
-            &:active,
-            &:hover,
-            &:focus {
-                background: $primary_dark_50;
-                color: #fff;
-            }
+      a {
+        padding: 0;
+        &:focus {
+          outline: auto;
+        }
       }
-    }
-  }
-}
 
-.nav-main {
-  .hamburger {
-    border: none;
-    height: 3.5em;
-    width: 3.5em;
-    padding: 0;
-    text-align: center;
-
-    &:active,
-    &:hover,
-    &:focus {
-      span {
-        color: #fff;
+      img,
+      svg {
+        width: 100%;
+        max-height: 100%;
       }
     }
 
-    .open {
-      display: block;
-      font-size: 1.5em;
-    }
+    .nav-main {
 
-    .close {
-      display: none;
-      font-size: 1.8em;
-    }
-  }
+      nav {
 
-  nav {
-    display: none;
-  }
+        height: 20%;
 
-  &.active {
-    .hamburger {
-      background: $primary_dark_50;
+        ul {
 
-      span {
-        color: #fff;
-      }
-
-      .open {
-        display: none;
-      }
-
-      .close {
-        display: block;
-      }
-    }
-
-    nav {
-      background: $primary_light_10;
-      display: block;
-      top: $height_header;
-      left: 0;
-      width: 100vw;
-
-      ul {
-        li {
-          border-top: 2px solid $primary_dark_50;
-
-          &:last-child {
-            border-bottom: 2px solid $primary_dark_50;
+          display: flex;
+          justify-content: center;
+          
+          li a {
+            font-size: 1em;
+            font-weight: 500;
           }
         }
       }
