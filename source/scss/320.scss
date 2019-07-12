@@ -3,7 +3,6 @@ header {
   padding: 10px;
 
   a {
-
     font: $font_headings;
     
     &.site-logo {
@@ -24,17 +23,16 @@ header {
   }
 
   nav {
-
     ul {
 
       display: flex;
       justify-content: center;
-      
-      li a {
+	}
+	
+	li {
         font-size: 1em;
         font-weight: 500;
-      }
-    }
+	}
   }
 }
 
