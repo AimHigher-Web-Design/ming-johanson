@@ -31,25 +31,19 @@
 
 <body id="root" class="<?php if(is_front_page()) {echo 'home';}; ?>">
     <header>
-        <div class="wrap">
-            <div class="site-logo">
-                <a href="/">
-                    <?php
-                        $logo = wp_get_attachment_image_src(get_theme_mod( 'custom_logo' ), 'full')[0];
-                        echo file_get_contents($logo);
-                    ?>
-                </a>
-            </div>
+        <a href="/" class="site-logo">
+            <?php
+                $logo = wp_get_attachment_image_src(get_theme_mod( 'custom_logo' ), 'full')[0];
+                echo file_get_contents($logo);
+            ?>
+        </a>
 
-            <div id="nav-main" class="nav-main">
-                <?php wp_nav_menu(array(
-                    'theme_location' => 'main_menu',
-                    'container' => 'nav',
-                    'container_class' => 'menu main'
-                    ));
-                ?>
-            </div>
-        </div>
+        <?php wp_nav_menu(array(
+            'theme_location' => 'main_menu',
+            'container' => 'nav',
+            'container_class' => 'menu main'
+            ));
+        ?>
     </header>
 
     <main>
