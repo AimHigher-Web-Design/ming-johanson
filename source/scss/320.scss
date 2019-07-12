@@ -1,11 +1,8 @@
 header {
-
-  @include transp-background();
   height: $height_header;
   align-items: center;
 
   .wrap {
-
     width: 100%;
 
     .site-logo {
@@ -15,7 +12,11 @@ header {
         padding: 0;
         &:focus {
           outline: auto;
-        }
+		}
+		
+		&:active, &:hover, &:focus {
+			background: none;
+		}
       }
 
       img,
@@ -169,3 +170,5 @@ footer {
     }
   }
 }
+
+
