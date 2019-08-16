@@ -1,10 +1,12 @@
 * {
     box-sizing: border-box;
-    color: $neutral_light_90;
-    font: $font_regular;
 }
 
 body {
+    --icon-size: 40px;
+    
+    color: $neutral_light_90;
+    font: $font_regular;
     margin: 0;
     position: absolute;
         top: 0;
@@ -75,11 +77,35 @@ a {
 }
 
 blockquote {
-    border: none;
-        border-right: 4px solid $secondary;
-    color: $primary_dark_75;
-    padding: 10px 10px 10px 5px;
-    text-align: right;
+    background: #fff;
+	font-style: italic;
+	font-size: 1.2em;
+	margin: 30px;
+	padding: 40px 30px 30px;
+	position: relative;
+	
+	&:after {
+		content: '';
+		background: $gradient_linear;
+		position: absolute;
+			top: -10px;
+			right: -10px;
+			bottom: -10px;
+			left: -10px;
+		z-index: -1;
+	}
+	
+	cite {
+		display: block;
+		text-align: right;
+		font-size: 0.8em;
+		font-style: normal;
+		font-weight: bold;
+		
+		span {
+			font-weight: normal;
+		}
+	}
 }
 
 ul {
@@ -128,21 +154,49 @@ nav {
 }
 
 .icons {
+    flex-grow: 0;
+    position: relative;
+    width: auto;
+
     i, svg {
         color: $primary_light_75;
-        fill: $primary_light_75;
-        height: 40px;
+        height: var(--icon-size);
         margin: 20px;
-        width: 40px;
+        width: var(--icon-size);
     }
-}
 
-a {
-    i, svg {
-        &:hover {
-            border: none;
-            cursor: pointer;
-            fill: $primary;
+    a {
+        font-size: 0;
+    }
+
+    @supports(mix-blend-mode: lighten) {
+        background: #fff;
+        
+        .gradient {
+            background: $gradient_linear;
+            mix-blend-mode: lighten;
+            pointer-events: none;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        i, svg {
+            color: #000;
+            border: 3px solid transparent;
+            padding: 10px;
+        }
+
+        a {
+            &:active, &:hover, &:focus {
+                background: none;
+
+                svg {
+                    border-color: $secondary;
+                }
+            }
         }
     }
 }
@@ -188,4 +242,49 @@ button, .btn {
             background: $primary_dark_50;
             color: #fff;
         }
+}
+
+input {
+    &[type="radio"] {
+        display: none;
+        &:checked + label:after {
+            transform: scale(1);
+        }
+
+        & + label {
+            --radioWidth: 22px;
+            
+            cursor: pointer;
+            padding-left: 32px;
+            position: relative;
+
+            &:before, &:after {
+                content: "";
+                position: absolute;
+                border-radius: 50%;
+            }
+
+            &:before {
+                width: 22px;
+                width: var(--radioWidth);
+                height: 22px;
+                height: var(--radioWidth);
+                border: 1px solid $neutral;
+                left: 0;
+                top: 0;
+            }
+
+            &:after {
+                width: 16px;
+                width: calc(var(--radioWidth) - 6px);
+                height: 16px;
+                height: calc(var(--radioWidth) - 6px);
+                top: 4px;
+                left: 4px;
+                background: $primary;
+                transform: scale(0);
+                transition: 0.3s ease;
+            }
+        }
+    }
 }

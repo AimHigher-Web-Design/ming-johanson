@@ -8,7 +8,7 @@
  */
 ?>
 
-<div class="facts block">
+<div class="facts">
    <h2>This Year</h2>
    <?php 
       $repeater = get_field('facts');

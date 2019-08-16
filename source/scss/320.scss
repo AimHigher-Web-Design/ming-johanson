@@ -1,3 +1,9 @@
+header, main, footer {
+	margin: 0 auto;
+	width: 90vw;
+		max-width: 1200px;
+}
+
 header {
   align-items: center;
   padding: 10px;
@@ -21,19 +27,19 @@ header {
       margin-bottom: 10px;
     }
   }
+}
 
-  nav {
-    ul {
+nav {
+  ul {
 
-      display: flex;
-      justify-content: center;
-	}
-	
-	li {
-        font-size: 0.9em;
-        font-weight: 500;
-	}
-  }
+    display: flex;
+    justify-content: center;
+}
+
+li {
+      font-size: 0.9em;
+      font-weight: 500;
+}
 }
 
 .image-container {
@@ -49,56 +55,176 @@ header {
   }
 }
 
-.icons {
-  &.social {
-    ul {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
+.banner {
+	display: flex;
+	font-size: 4.5em;
 
-    i {
-      font-size: 2em;
-      height: auto;
-      width: auto;
-      margin: 0 0 5px;
-    }
-  }
+	> * {
+		flex: 1 1 200px; 
+	}
+
+	blockquote {
+		font-style: normal;
+		padding: 50px;
+
+		&:after {
+			content: normal;
+		}
+	}
+}
+
+.block {
+	clear: both;
+	font-size: 2em;
+	// height: 100vh;
+	padding: 50px 0;
+	text-align: right;
+
+	.paral {
+		height: 60vh;
+		margin-left: -5vw;
+		margin: 0 0 200px -5vw;
+		min-width: 100vw;
+		max-width: unset;
+		position: sticky;
+		top: 10px;
+		z-index: -1;
+	}
+
+	svg {
+		float: left;
+		width: 40%;
+	}
+
+	blockquote {
+		background: none;
+		font-size: 1.7em;
+		margin: 0;
+		padding: 0;
+		position: static;
+
+		&:after {
+			content: normal
+		}
+	}
+
+	.subtitle {
+		margin-bottom: 40vh;
+	}
+
+	& + .cta {
+		background: $neutral;
+		color: #fff;
+		font-weight: bold;
+		text-align: center;
+		padding: 15px;
+		margin: 0 -5vw;
+		width: 100vw;
+
+		a {
+			border: 2px solid #fff;
+			color: #fff;
+			line-height: 1;
+			margin-left: 20px;
+			padding: 10px 15px;
+			text-decoration: none;
+
+			&:active, &:hover, &:focus {
+				border-color: $secondary;
+				background: $secondary;
+			}
+		}
+	}
+}
+
+.testimonials {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	blockquote {
+		display: none;
+		font-size: 1.6em;
+		width: 100%;
+	}
+
+	cite {
+		font-size: 0.9em;
+		text-align: center;
+	}
+
+	input {
+		&:checked {
+			& + label {
+				& + blockquote {
+					display: block;
+				}
+			}
+		}
+	}
+
+	label {
+		font-size: 0;
+		height: var(--radioWidth);
+		order: 2;
+		width: var(--radioWidth);
+	}
+}
+
+.facts {
+	background: $secondary;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 -5vw;
+	width: 100vw;
+
+	h2 {
+		color: inherit;
+		margin-right: 20px;
+	}
+
+	dl {
+		color: inherit;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, 1fr);
+		grid-template-rows: auto auto;
+		grid-auto-flow: column;
+		margin: 0;
+
+		& > * {
+			text-align: center;
+
+			&:nth-child(4n), &:nth-child(4n - 1) {
+				background: $primary;
+			}
+		}
+	}
+
+	dt {
+		padding: 20px 10px 10px;
+	}
+
+	dd {
+		font-size: 3em;
+		margin: 0;
+	}
 }
 
 footer {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 auto;
-  max-width: $width_inner;
-  z-index: 50;
+  padding: 30px 20px 20px;
 
-  nav.menu {
+  nav {
+	  --icon-size: 60px;
     width: 100%;
     max-width: 400px;
 
     ul {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-direction: row;
-      font-size: 12px;
-      padding: 30px 20px 20px;
-      width: 100%;
-    }
-
-    &.social {
-		ul {
-			flex-direction: row;
-		}
-    }
-
-    &.footer {
-      i {
-        height: 15px;
-        margin: 5px;
-        width: 15px;
-      }
+      justify-content: flex-end;
     }
   }
 
@@ -133,9 +259,10 @@ footer {
   }
 
   .aimhigher {
-    justify-content: flex-end;
+	align-self: center;
+	justify-content: flex-end;
 
-    svg {
+    svg {		
       .cls-1,
       .cls-2 {
         fill: $primary_light_75;
@@ -143,9 +270,14 @@ footer {
     }
 
     a {
+		border: 3px solid transparent;
+
       &:active,
       &:hover,
       &:focus {
+		  background: none;
+		  border-color: $secondary;
+
         svg {
           .cls-1 {
             fill: #1c75bc;
@@ -159,5 +291,3 @@ footer {
     }
   }
 }
-
-

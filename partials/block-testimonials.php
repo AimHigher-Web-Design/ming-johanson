@@ -8,13 +8,20 @@
  */
 ?>
 
-<div class="facts block">
-   <h2>This Year</h2>
+<div class="testimonials">
    <?php 
       $repeater = get_field('testimonials');
       if($repeater):
-          echo '<div>';
-            while ( have_rows('testimonials') ) : the_row(); ?>
+         $first = true;
+
+            while ( have_rows('testimonials') ) : the_row(); 
+               if($first):
+            ?>
+                  <input type="radio" name="testimonials" id="<?php the_sub_field('company') ?>" checked />
+               <?php else: ?>
+                  <input type="radio" name="testimonials" id="<?php the_sub_field('company') ?>" />
+               <?php endif; ?>
+               <label for="<?php the_sub_field('company') ?>"><?php the_sub_field('company') ?></label>
                <blockquote>
                   <?php the_sub_field('quote') ?>
                   <cite>
@@ -25,8 +32,7 @@
                      ?>
                   </cite>
                </blockquote>
-            <?php endwhile;
-          echo '</div>';
+            <?php $first = false; endwhile;
       endif;
    ?>
 </div>

@@ -29,7 +29,7 @@
         <?php wp_head(); ?>
     </head>
 
-<body id="root" class="<?php if(is_front_page()) {echo 'home';}; ?>">
+<body class="<?php if(is_front_page()) {echo 'home';}; ?>">
     <header>
         <a href="/" class="site-logo">
             <?php
@@ -46,4 +46,4 @@
         ?>
     </header>
 
-    <main>
+    <main  class="<?php if(is_front_page()) {echo 'home';}; ?>">
