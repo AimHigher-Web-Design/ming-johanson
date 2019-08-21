@@ -1,75 +1,120 @@
-header, main, footer {
+header,
+main,
+footer {
 	margin: 0 auto;
 	width: 90vw;
-		max-width: 1200px;
+	max-width: 1200px;
+}
+
+.home {
+	header {
+		.site-logo {
+			path {
+				fill: #fff;
+			}
+		}
+	}
+
+	nav {
+		a {
+			color: #fff;
+		}
+	}
 }
 
 header {
-  align-items: center;
-  padding: 10px;
+	align-items: center;
+	height: $height_header;
+	padding: 10px;
+	position: relative;
+	z-index: 50;
 
-  a {
-    font: $font_headings;
-    
-    &.site-logo {
-      padding: 0;
+	a {
+		font: $font_headings;
 
-      &:focus {
-        outline: auto;
-      }
-    }
+		&.site-logo {
+			padding: 0;
 
-    img,
-    svg {
-      width: 100%;
-      max-height: 100%;
-      display: block;
-      margin-bottom: 10px;
-    }
-  }
+			&:focus {
+				outline: auto;
+			}
+		}
+
+		img,
+		svg {
+			width: 100%;
+			max-height: 100%;
+			display: block;
+			margin-bottom: 10px;
+		}
+	}
 }
 
 nav {
-  ul {
+	ul {
+		display: flex;
+		justify-content: center;
+	}
 
-    display: flex;
-    justify-content: center;
-}
+	li {
+		font-size: 0.9em;
+		font-weight: 500;
+	}
 
-li {
-      font-size: 0.9em;
-      font-weight: 500;
-}
+	a {
+		// text-shadow: 1px 1px 2px #fff, -1px -1px 2px #fff;
+	}
 }
 
 .image-container {
-  overflow: hidden;
+	overflow: hidden;
 
-  img {
-    height: auto;
-    min-height: 100%;
-    max-height: 100%;
-    width: auto;
-    min-width: 100%;
-    max-width: 100%;
-  }
+	img {
+		height: auto;
+		min-height: 100%;
+		max-height: 100%;
+		width: auto;
+		min-width: 100%;
+		max-width: 100%;
+	}
 }
 
 .banner {
 	display: flex;
 	font-size: 4.5em;
+	height: 70vh;
+	margin-top: -1 * $height_header;
+	padding: $height_header 0 50px;
+	overflow: hidden;
 
 	> * {
-		flex: 1 1 200px; 
+		flex: 1 1 200px;
 	}
 
 	blockquote {
+		background: transparent;
+		color: #fff;
 		font-style: normal;
 		padding: 50px;
+		width: 50%;
+		min-width: 200px;
 
 		&:after {
 			content: normal;
 		}
+	}
+
+	img {
+		position: absolute;
+		top: 0;
+		left: calc(-1 * (50vw - 50%));
+		bottom: 0;
+		min-width: 100vw;
+		z-index: -1;
+	}
+
+	& + .block {
+		padding-top: 0;
 	}
 }
 
@@ -81,19 +126,23 @@ li {
 	text-align: right;
 
 	.paral {
-		height: 60vh;
-		margin-left: -5vw;
-		margin: 0 0 200px -5vw;
+		height: 100vh;
+		margin-left: calc(-1 * (50vw - 50%));
 		min-width: 100vw;
 		max-width: unset;
 		position: sticky;
-		top: 10px;
+		top: 0;
 		z-index: -1;
 	}
 
 	svg {
 		float: left;
 		width: 40%;
+	}
+
+	svg,
+	blockquote {
+		// margin-top: 200px;
 	}
 
 	blockquote {
@@ -104,7 +153,7 @@ li {
 		position: static;
 
 		&:after {
-			content: normal
+			content: normal;
 		}
 	}
 
@@ -113,23 +162,38 @@ li {
 	}
 
 	& + .cta {
-		background: $neutral;
+		// margin-top: -
+	}
+}
+
+.cta {
+	background: $neutral;
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+	padding: 15px;
+	margin: -50px calc(-1 * (50vw - 50%)) 0;
+	width: 100vw;
+
+	a {
+		border: 2px solid #fff;
 		color: #fff;
-		font-weight: bold;
-		text-align: center;
-		padding: 15px;
-		margin: 0 -5vw;
-		width: 100vw;
+		line-height: 1;
+		margin-left: 20px;
+		padding: 10px 15px;
+		text-decoration: none;
 
-		a {
-			border: 2px solid #fff;
+		&:active,
+		&:hover,
+		&:focus {
+			animation: animatedBackground 2s linear reverse infinite;
+			background: $gradient_linear;
+			background-size: 200%;
+			background-position: bottom left;
+			border-color: transparent;
 			color: #fff;
-			line-height: 1;
-			margin-left: 20px;
-			padding: 10px 15px;
-			text-decoration: none;
 
-			&:active, &:hover, &:focus {
+			@media (prefers-reduced-motion: reduce) {
 				border-color: $secondary;
 				background: $secondary;
 			}
@@ -196,7 +260,8 @@ li {
 		& > * {
 			text-align: center;
 
-			&:nth-child(4n), &:nth-child(4n - 1) {
+			&:nth-child(4n),
+			&:nth-child(4n - 1) {
 				background: $primary;
 			}
 		}
@@ -213,81 +278,81 @@ li {
 }
 
 footer {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 30px 20px 20px;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 30px 20px 20px;
 
-  nav {
-	  --icon-size: 60px;
-    width: 100%;
-    max-width: 400px;
+	nav {
+		--icon-size: 60px;
+		width: 100%;
+		max-width: 400px;
 
-    ul {
-      display: flex;
-      justify-content: flex-end;
-    }
-  }
+		ul {
+			display: flex;
+			justify-content: flex-end;
+		}
+	}
 
-  .logo {
-    display: flex;
-    padding: 0 20px 20px;
-    width: 100%;
+	.logo {
+		display: flex;
+		padding: 0 20px 20px;
+		width: 100%;
 
-    img {
-      opacity: 0.5;
-    }
+		img {
+			opacity: 0.5;
+		}
 
-    a {
-      display: block;
-      width: 60%;
-      max-width: 200px;
+		a {
+			display: block;
+			width: 60%;
+			max-width: 200px;
 
-      &:active,
-      &:hover,
-      &:focus {
-        img {
-          opacity: 1;
-        }
-      }
-    }
+			&:active,
+			&:hover,
+			&:focus {
+				img {
+					opacity: 1;
+				}
+			}
+		}
 
-    h3 {
-      font-size: 0.8em;
-      margin-left: 20px;
-      width: 40%;
-    }
-  }
+		h3 {
+			font-size: 0.8em;
+			margin-left: 20px;
+			width: 40%;
+		}
+	}
 
-  .aimhigher {
-	align-self: center;
-	justify-content: flex-end;
+	.aimhigher {
+		align-self: center;
+		justify-content: flex-end;
 
-    svg {		
-      .cls-1,
-      .cls-2 {
-        fill: $primary_light_75;
-      }
-    }
+		svg {
+			.cls-1,
+			.cls-2 {
+				fill: $primary_light_75;
+			}
+		}
 
-    a {
-		border: 3px solid transparent;
+		a {
+			border: 3px solid transparent;
 
-      &:active,
-      &:hover,
-      &:focus {
-		  background: none;
-		  border-color: $secondary;
+			&:active,
+			&:hover,
+			&:focus {
+				background: none;
+				border-color: $secondary;
 
-        svg {
-          .cls-1 {
-            fill: #1c75bc;
-          }
+				svg {
+					.cls-1 {
+						fill: #1c75bc;
+					}
 
-          .cls-2 {
-            fill: #16a6b1;
-          }
-        }
-      }
-    }
-  }
+					.cls-2 {
+						fill: #16a6b1;
+					}
+				}
+			}
+		}
+	}
 }

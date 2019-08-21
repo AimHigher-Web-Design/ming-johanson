@@ -1,25 +1,22 @@
 header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+	a {
+		&.site-logo {
+			img,
+			svg {
+				margin-bottom: 0;
+			}
+		}
+	}
 
-  a {
-
-    &.site-logo {
-
-      img,
-      svg {
-        margin-bottom: 0;
-      }
-    }
-  }
-
-  nav {
-    height: 100%;
-  }
+	nav {
+		// height: 100%;
+	}
 }
 
 footer {
-  justify-content: space-between;
+	justify-content: space-between;
 }
