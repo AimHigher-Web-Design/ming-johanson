@@ -8,7 +8,7 @@
  */
 ?>
 
-   <div class="block">
+   <div class="block parallax">
       <img class="paral" src="https://images.unsplash.com/photo-1518946222227-364f22132616?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80" />
       <?php echo file_get_contents(get_field('image')); ?>
       <blockquote><?php the_field('heading'); ?></blockquote>

@@ -13,6 +13,11 @@ footer {
 				fill: #fff;
 			}
 		}
+
+		.site-logo,
+		nav {
+			background: radial-gradient(ellipse, rgba(0, 0, 0, 0.2), transparent);
+		}
 	}
 
 	nav {
@@ -82,7 +87,7 @@ nav {
 .banner {
 	display: flex;
 	font-size: 4.5em;
-	height: 70vh;
+	height: 90vh;
 	margin-top: -1 * $height_header;
 	padding: $height_header 0 50px;
 	overflow: hidden;
@@ -122,8 +127,15 @@ nav {
 	clear: both;
 	font-size: 2em;
 	// height: 100vh;
-	padding: 50px 0;
 	text-align: right;
+
+	&.parallax {
+		padding: 50px 0;
+
+		& + * {
+			margin-top: -50px;
+		}
+	}
 
 	.paral {
 		height: 100vh;
@@ -160,10 +172,6 @@ nav {
 	.subtitle {
 		margin-bottom: 40vh;
 	}
-
-	& + .cta {
-		// margin-top: -
-	}
 }
 
 .cta {
@@ -172,7 +180,7 @@ nav {
 	font-weight: bold;
 	text-align: center;
 	padding: 15px;
-	margin: -50px calc(-1 * (50vw - 50%)) 0;
+	margin: 0 calc(-1 * (50vw - 50%));
 	width: 100vw;
 
 	a {
@@ -190,7 +198,7 @@ nav {
 			background: $gradient_linear;
 			background-size: 200%;
 			background-position: bottom left;
-			border-color: transparent;
+			border-color: $neutral;
 			color: #fff;
 
 			@media (prefers-reduced-motion: reduce) {
@@ -205,6 +213,7 @@ nav {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+	padding: 50px 0;
 
 	blockquote {
 		display: none;
@@ -233,6 +242,49 @@ nav {
 		order: 2;
 		width: var(--radioWidth);
 	}
+
+	@supports (grid-template-areas: '.') {
+		display: grid;
+		grid-template-columns: repeat(var(--testimonials), 1fr);
+		grid-template-rows: max-content auto;
+		grid-gap: 20px;
+		align-items: center;
+		justify-items: center;
+
+		blockquote {
+			display: block;
+			grid-column: 1 / -1;
+			grid-row: 1;
+			margin: 0;
+			visibility: hidden;
+		}
+
+		input {
+			&:checked {
+				& + label {
+					& + blockquote {
+						visibility: visible;
+					}
+				}
+			}
+		}
+
+		label {
+			order: 2;
+
+			&:first-of-type {
+				justify-self: end;
+
+				&:last-of-type {
+					justify-self: center;
+				}
+			}
+
+			&:last-of-type {
+				justify-self: start;
+			}
+		}
+	}
 }
 
 .facts {
@@ -241,7 +293,7 @@ nav {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin: 0 -5vw;
+	margin: 0 calc(-1 * (50vw - 50%));
 	width: 100vw;
 
 	h2 {

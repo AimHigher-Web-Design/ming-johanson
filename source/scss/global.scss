@@ -269,7 +269,7 @@ input {
 			--radioWidth: 22px;
 
 			cursor: pointer;
-			padding-left: 32px;
+			padding-left: var(--radioWidth);
 			position: relative;
 
 			&:before,
