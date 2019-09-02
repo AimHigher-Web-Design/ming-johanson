@@ -102,6 +102,15 @@ $font_headings: 700 1.5em 'Arno Pro', serif;
 $height_header: 15vh;
 $width_inner: 75rem;
 
+// Extends
+%fullcentre_pos {
+	left: calc(-1 * (50vw - 50%));
+}
+
+%fullcentre_mar {
+	margin-left: calc(-1 * (50vw - 50%));
+}
+
 // Mixins
 @mixin transp-background() {
 	background: #fff;

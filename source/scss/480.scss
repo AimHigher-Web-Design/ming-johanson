@@ -1,27 +1,72 @@
 header {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
 
-  a {
+	nav {
+		margin-left: 0;
+	}
 
-    &.site-logo {
-      
-      img,
-      svg {
-        height: 20%;
-      }
-    }
-  }
+	.site-logo {
+		max-width: 370px;
+	}
+}
+
+.banner {
+	font-size: 3.5em;
+}
+
+.block {
+	font-size: 1.5em;
+}
+
+.cta {
+	font-size: 1em;
+}
+
+.testimonials {
+	padding: 50px 0;
+
+	blockquote {
+		font-size: 1.3em;
+		padding: 30px 20px 20px;
+	}
+}
+
+.facts {
+	dl {
+		grid-template-columns: repeat(auto-fill, 1fr);
+		grid-template-rows: repeat(2, auto);
+		width: auto;
+
+		& > * {
+			&:nth-child(4n),
+			&:nth-child(4n - 1) {
+				background: $primary;
+			}
+		}
+	}
 }
 
 footer {
-    nav.menu {
-        &.social {
-            width: 40%;
-        }
-    }
+	padding: 30px 20px 20px;
 
-    .logo {
-        &.aimhigher {
-            width: 40%;
-        }
-    }
+	nav {
+		&.menu {
+			&.social {
+				width: 40%;
+			}
+
+			svg {
+				margin: 20px;
+			}
+		}
+	}
+
+	.logo {
+		a {
+			width: 40%;
+			min-width: 200px;
+		}
+	}
 }

@@ -1,15 +1,101 @@
-
 header {
+	justify-content: space-between;
+	align-items: center;
+	height: $height_header;
 
-  a {
+	.site-logo {
+		width: 30vw;
+		max-width: 500px;
+	}
 
-    &.site-logo {
+	nav {
+		a {
+			padding: 5px 10px;
+		}
+	}
+}
 
-      img,
-      svg {
-        width: 20vw;
-        max-width: 500px;
-      }
-    }
-  }
+.home {
+	header {
+		.site-logo {
+			path {
+				fill: #fff;
+			}
+		}
+
+		.site-logo,
+		nav {
+			background: radial-gradient(ellipse, rgba(0, 0, 0, 0.2), transparent);
+		}
+
+		nav {
+			a {
+				color: #fff;
+			}
+		}
+	}
+}
+
+.banner {
+	font-size: 4.5em;
+	height: 90vh;
+	margin-top: -1 * $height_header;
+	padding: $height_header 0 50px;
+	position: static;
+	overflow: hidden;
+
+	img {
+		width: auto;
+	}
+}
+
+.block {
+	font-size: 2em;
+
+	&.parallax {
+		& + * {
+			margin-top: -50px;
+		}
+	}
+
+	> div {
+		margin-bottom: 40vh;
+		padding: 40px 0;
+	}
+
+	svg {
+		margin-top: 0;
+	}
+
+	.paral {
+		height: 100vh;
+		position: sticky;
+	}
+}
+
+.cta {
+	a {
+		display: inline;
+		margin-top: 0;
+	}
+}
+
+.testimonials {
+	blockquote {
+		font-size: 1.6em;
+		padding: 40px 30px 30px;
+	}
+}
+
+.facts {
+	dl {
+		grid-template-columns: repeat(auto-fill, 1fr);
+
+		& > * {
+			&:nth-child(4n),
+			&:nth-child(4n - 1) {
+				background: $primary;
+			}
+		}
+	}
 }

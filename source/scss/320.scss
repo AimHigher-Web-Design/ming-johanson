@@ -8,41 +8,28 @@ footer {
 
 .home {
 	header {
-		.site-logo {
-			path {
-				fill: #fff;
-			}
-		}
-
-		.site-logo,
-		nav {
-			background: radial-gradient(ellipse, rgba(0, 0, 0, 0.2), transparent);
-		}
-	}
-
-	nav {
-		a {
-			color: #fff;
-		}
 	}
 }
 
 header {
 	align-items: center;
-	height: $height_header;
+	justify-content: center;
 	padding: 10px;
 	position: relative;
 	z-index: 50;
 
 	a {
 		font: $font_headings;
+	}
 
-		&.site-logo {
-			padding: 0;
+	.site-logo {
+		display: block;
+		padding: 0;
+		width: 100%;
+		max-width: 370px;
 
-			&:focus {
-				outline: auto;
-			}
+		&:focus {
+			outline: auto;
 		}
 
 		img,
@@ -56,9 +43,14 @@ header {
 }
 
 nav {
+	// @extend %fullcentre_mar;
+	// width: 100vw;
+
 	ul {
 		display: flex;
-		justify-content: center;
+		// justify-content: center;
+		overflow-y: visible;
+		overflow-x: auto;
 	}
 
 	li {
@@ -67,7 +59,8 @@ nav {
 	}
 
 	a {
-		// text-shadow: 1px 1px 2px #fff, -1px -1px 2px #fff;
+		display: block;
+		padding: 5px 10px 10px;
 	}
 }
 
@@ -86,11 +79,10 @@ nav {
 
 .banner {
 	display: flex;
-	font-size: 4.5em;
-	height: 90vh;
-	margin-top: -1 * $height_header;
-	padding: $height_header 0 50px;
-	overflow: hidden;
+	align-items: center;
+	height: 115vw;
+	font-size: 3em;
+	position: relative;
 
 	> * {
 		flex: 1 1 200px;
@@ -100,7 +92,8 @@ nav {
 		background: transparent;
 		color: #fff;
 		font-style: normal;
-		padding: 50px;
+		margin: 0;
+		text-shadow: 1px 1px 1px #000, 1px 1px 1px #000;
 		width: 50%;
 		min-width: 200px;
 
@@ -112,9 +105,11 @@ nav {
 	img {
 		position: absolute;
 		top: 0;
-		left: calc(-1 * (50vw - 50%));
+		right: calc(-1 * (50vw - 50%));
 		bottom: 0;
+		width: 200vw;
 		min-width: 100vw;
+		max-width: unset;
 		z-index: -1;
 	}
 
@@ -124,37 +119,59 @@ nav {
 }
 
 .block {
-	clear: both;
-	font-size: 2em;
-	// height: 100vh;
+	display: flex;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	font-size: 1em;
 	text-align: right;
 
 	&.parallax {
 		padding: 50px 0;
+	}
 
-		& + * {
-			margin-top: -50px;
+	> div {
+		clear: both;
+		padding: 20px 0;
+		position: relative;
+
+		&:before {
+			background: rgba(255, 255, 255, 0.8);
+			content: '';
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: calc(-1 * (50vw - 50%));
+			width: 100vw;
+			z-index: -1;
 		}
 	}
 
 	.paral {
-		height: 100vh;
-		margin-left: calc(-1 * (50vw - 50%));
+		height: auto;
+		margin-right: calc(-1 * (50vw - 50%));
 		min-width: 100vw;
 		max-width: unset;
-		position: sticky;
 		top: 0;
 		z-index: -1;
 	}
 
 	svg {
 		float: left;
+		margin-top: -100px;
+		position: relative;
 		width: 40%;
-	}
 
-	svg,
-	blockquote {
-		// margin-top: 200px;
+		&:before {
+			background: #fff;
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			z-index: 0;
+		}
 	}
 
 	blockquote {
@@ -168,15 +185,13 @@ nav {
 			content: normal;
 		}
 	}
-
-	.subtitle {
-		margin-bottom: 40vh;
-	}
 }
 
 .cta {
 	background: $neutral;
 	color: #fff;
+	display: block;
+	font-size: 1.2em;
 	font-weight: bold;
 	text-align: center;
 	padding: 15px;
@@ -186,8 +201,9 @@ nav {
 	a {
 		border: 2px solid #fff;
 		color: #fff;
+		display: inline-block;
 		line-height: 1;
-		margin-left: 20px;
+		margin: 1em 20px 0;
 		padding: 10px 15px;
 		text-decoration: none;
 
@@ -210,14 +226,12 @@ nav {
 }
 
 .testimonials {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	padding: 50px 0;
+	padding: 30px 0;
 
 	blockquote {
 		display: none;
-		font-size: 1.6em;
+		font-size: 1em;
+		padding: 20px 10px 10px;
 		width: 100%;
 	}
 
@@ -285,12 +299,17 @@ nav {
 			}
 		}
 	}
+
+	& + .block {
+		padding-top: 0;
+	}
 }
 
 .facts {
 	background: $secondary;
 	color: #fff;
 	display: flex;
+	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
 	margin: 0 calc(-1 * (50vw - 50%));
@@ -304,17 +323,22 @@ nav {
 	dl {
 		color: inherit;
 		display: grid;
-		grid-template-columns: repeat(auto-fill, 1fr);
-		grid-template-rows: auto auto;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(4, auto);
 		grid-auto-flow: column;
 		margin: 0;
+		width: 100%;
 
 		& > * {
 			text-align: center;
 
-			&:nth-child(4n),
-			&:nth-child(4n - 1) {
-				background: $primary;
+			@media (max-width: 30.9rem) {
+				&:nth-child(3),
+				&:nth-child(4),
+				&:nth-child(5),
+				&:nth-child(6) {
+					background: $primary;
+				}
 			}
 		}
 	}
@@ -332,7 +356,6 @@ nav {
 footer {
 	display: flex;
 	flex-wrap: wrap;
-	padding: 30px 20px 20px;
 
 	nav {
 		--icon-size: 60px;
@@ -342,6 +365,12 @@ footer {
 		ul {
 			display: flex;
 			justify-content: flex-end;
+		}
+
+		&.menu {
+			svg {
+				margin: 0;
+			}
 		}
 	}
 
