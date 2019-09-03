@@ -310,8 +310,8 @@ nav {
 }
 
 .facts {
-	background: $secondary;
-	color: #fff;
+	background: $neutral;
+	color: $primary;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
@@ -320,7 +320,7 @@ nav {
 	width: 100vw;
 
 	h2 {
-		color: inherit;
+		color: #fff;
 		margin-right: 20px;
 	}
 
@@ -341,7 +341,8 @@ nav {
 				&:nth-child(4),
 				&:nth-child(5),
 				&:nth-child(6) {
-					background: $primary;
+					background: #fff;
+					color: $secondary;
 				}
 			}
 		}

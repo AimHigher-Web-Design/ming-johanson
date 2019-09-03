@@ -42,7 +42,8 @@ header {
 		& > * {
 			&:nth-child(4n),
 			&:nth-child(4n - 1) {
-				background: $primary;
+				background: #fff;
+				color: $secondary;
 			}
 		}
 	}

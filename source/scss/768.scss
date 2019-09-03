@@ -86,16 +86,3 @@ header {
 		padding: 40px 30px 30px;
 	}
 }
-
-.facts {
-	dl {
-		grid-template-columns: repeat(auto-fill, 1fr);
-
-		& > * {
-			&:nth-child(4n),
-			&:nth-child(4n - 1) {
-				background: $primary;
-			}
-		}
-	}
-}
