@@ -6,11 +6,6 @@ footer {
 	max-width: 1200px;
 }
 
-.home {
-	header {
-	}
-}
-
 header {
 	align-items: center;
 	justify-content: center;
@@ -54,8 +49,17 @@ nav {
 	}
 
 	li {
+		border: 2px solid transparent;
 		font-size: 0.9em;
 		font-weight: 500;
+
+		&.current_page_item {
+			border-color: $primary;
+
+			a {
+				text-decoration: none;
+			}
+		}
 	}
 
 	a {
