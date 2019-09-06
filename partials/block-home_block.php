@@ -9,12 +9,12 @@
 ?>
 
    <div class="block parallax">
-      <img class="paral" src="https://images.unsplash.com/photo-1518946222227-364f22132616?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80" />
       <div>
-         <?php echo file_get_contents(get_field('image')); ?>
+         <?php echo file_get_contents(get_field('graphic')); ?>
          <blockquote><?php the_field('heading'); ?></blockquote>
          <p class="subtitle"><?php the_field('text'); ?></p>
       </div>
+      <img class="paral" src="<?php get_field('image'); ?>" />
    </div>
 
 <?php if (get_field('call_to_action')): ?>
