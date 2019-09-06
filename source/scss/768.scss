@@ -4,8 +4,11 @@ header {
 	height: $height_header;
 
 	.site-logo {
-		width: 30vw;
-		max-width: 500px;
+		svg {
+			width: 30vw;
+			max-width: 500px;
+			max-height: calc(#{$height_header} - 20px);
+		}
 	}
 
 	nav {

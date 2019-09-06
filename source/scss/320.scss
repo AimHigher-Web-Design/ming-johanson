@@ -14,14 +14,14 @@ header {
 	z-index: 50;
 
 	a {
+		color: $neutral;
 		font: $font_headings;
+		text-decoration: none;
 	}
 
 	.site-logo {
 		display: block;
 		padding: 0;
-		width: 100%;
-		max-width: 370px;
 
 		&:focus {
 			outline: auto;
@@ -30,8 +30,7 @@ header {
 		img,
 		svg {
 			width: 100%;
-			max-height: 100%;
-			display: block;
+			max-width: 370px;
 			margin-bottom: 10px;
 		}
 	}
@@ -49,16 +48,11 @@ nav {
 	}
 
 	li {
-		border: 2px solid transparent;
 		font-size: 0.9em;
 		font-weight: 500;
 
 		&.current_page_item {
-			border-color: $primary;
-
-			a {
-				text-decoration: none;
-			}
+			color: $secondary;
 		}
 	}
 

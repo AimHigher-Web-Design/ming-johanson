@@ -17,6 +17,18 @@
                 'render_template'   => 'partials/block-home_block.php',
             ));
 
+            // CTA Blocks
+            acf_register_block(array(
+                'name'				=> 'cta',
+                'title'				=> __('CTA'),
+                'description'		=> __('A call to action'),
+                'post_types'        => array('page'),
+                'category'			=> 'common',
+                'icon'				=> 'megaphone',
+                'mode'              => 'preview',
+                'render_template'   => 'partials/block-cta.php',
+            ));
+
             // Banner
             acf_register_block(array(
                 'name'				=> 'banner',
@@ -266,9 +278,33 @@
             'title' => 'Block - Home Block',
             'fields' => array(
                 array(
-                    'key' => 'field_5d22b04df73cc',
-                    'label' => 'Image',
+                    'key' => 'field_5d725b03fa876',
+                    'label' => 'Parallax Image',
                     'name' => 'image',
+                    'type' => 'image',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'return_format' => 'array',
+                    'preview_size' => 'full',
+                    'library' => 'all',
+                    'min_width' => 2500,
+                    'min_height' => '',
+                    'min_size' => '',
+                    'max_width' => '',
+                    'max_height' => '',
+                    'max_size' => '',
+                    'mime_types' => '',
+                ),
+                array(
+                    'key' => 'field_5d22b04df73cc',
+                    'label' => 'Graphic',
+                    'name' => 'graphic',
                     'type' => 'image',
                     'instructions' => '',
                     'required' => 1,
@@ -437,6 +473,88 @@
                         'param' => 'block',
                         'operator' => '==',
                         'value' => 'acf/home-block',
+                    ),
+                ),
+            ),
+            'menu_order' => 0,
+            'position' => 'normal',
+            'style' => 'default',
+            'label_placement' => 'top',
+            'instruction_placement' => 'label',
+            'hide_on_screen' => '',
+            'active' => true,
+            'description' => '',
+        ));
+
+        //Block - CTA Block
+        acf_add_local_field_group(array(
+            'key' => 'group_5d22b03dce501',
+            'title' => 'Block - CTA Block',
+            'fields' => array(
+                array(
+                    'key' => 'field_5d22b0ddf73d0',
+                    'label' => 'CTA Text',
+                    'name' => 'cta_text',
+                    'type' => 'text',
+                    'instructions' => '',
+                    'required' => 0,
+                    'wrapper' => array(
+                        'width' => '23',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'placeholder' => 'Is that, a dragon?',
+                    'prepend' => '',
+                    'append' => '',
+                    'maxlength' => '',
+                ),
+                array(
+                    'key' => 'field_5d22b102f73d1',
+                    'label' => 'Button Text',
+                    'name' => 'button',
+                    'type' => 'text',
+                    'instructions' => '',
+                    'required' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'placeholder' => 'Find out here',
+                    'prepend' => '',
+                    'append' => '',
+                    'maxlength' => '',
+                ),
+                array(
+                    'key' => 'field_5d22b117f73d2',
+                    'label' => 'Link',
+                    'name' => 'link',
+                    'type' => 'page_link',
+                    'instructions' => '',
+                    'required' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'post_type' => array(
+                        0 => 'post',
+                        1 => 'page',
+                    ),
+                    'taxonomy' => '',
+                    'allow_null' => 0,
+                    'allow_archives' => 1,
+                    'multiple' => 0,
+                ),
+            ),
+            'location' => array(
+                array(
+                    array(
+                        'param' => 'block',
+                        'operator' => '==',
+                        'value' => 'acf/cta',
                     ),
                 ),
             ),
