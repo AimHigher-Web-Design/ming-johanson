@@ -363,6 +363,12 @@
                     'append' => '',
                     'maxlength' => '',
                 ),
+                array (
+                    'key' => 'field_5d22b0ac3243c',
+                    'label' => 'Image Left Aligned',
+                    'name' => 'left',
+                    'type' => 'true_false',
+                )
                 array(
                     'key' => 'field_5d22b0bcf73cf',
                     'label' => 'Call to Action?',
