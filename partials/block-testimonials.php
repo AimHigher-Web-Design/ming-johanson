@@ -38,6 +38,9 @@
                      }
                      ?>
                   </cite>
+                  <?php if (get_sub_field('image')): ?>
+                     <img class="profile" src="<?php echo get_sub_field('image'); ?>" />
+                  <?php endif; ?>
                </blockquote>
             <?php $first = false;
    	endwhile;

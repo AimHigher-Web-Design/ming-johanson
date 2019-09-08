@@ -656,7 +656,7 @@
                             'maxlength' => '',
                         ),
                         array(
-                            'key' => 'field_5d725b03fa876',
+                            'key' => 'field_5',
                             'label' => 'Profile Image',
                             'name' => 'image',
                             'type' => 'image',

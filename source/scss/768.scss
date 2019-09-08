@@ -20,15 +20,21 @@ header {
 
 .home {
 	header {
+		&:before {
+			background: rgba(0, 0, 0, 0.2);
+			content: '';
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: calc(-1 * (50vw - 50%));
+			width: 100vw;
+			z-index: -1;
+		}
+
 		.site-logo {
 			path {
 				fill: #fff;
 			}
-		}
-
-		.site-logo,
-		nav {
-			background: radial-gradient(ellipse, rgba(0, 0, 0, 0.2), transparent);
 		}
 
 		nav {
@@ -44,26 +50,33 @@ header {
 	height: 90vh;
 	margin-top: -1 * $height_header;
 	padding: $height_header 0 50px;
-	position: static;
+	// position: static;
 	overflow: hidden;
 
 	img {
+		top: calc(-1 * #{$height_header});
 		width: auto;
 	}
 }
 
 .block {
+	display: block;
 	font-size: 2em;
 
-	&.parallax {
-		& + * {
-			margin-top: -50px;
-		}
+	> div {
+		height: 100vh;
+		// margin-bottom: 40vh;
+		padding: 40px 0;
+		position: sticky;
 	}
 
-	> div {
-		margin-bottom: 40vh;
-		padding: 40px 0;
+	> div,
+	.paral {
+		height: 60vh;
+	}
+
+	.subtitle {
+		font-size: 0.8em;
 	}
 
 	svg {
@@ -71,8 +84,13 @@ header {
 	}
 
 	.paral {
-		height: 100vh;
-		position: sticky;
+		margin-left: calc(-1 * (50vw - 50%));
+		position: static;
+		width: auto;
+	}
+
+	& + .cta {
+		// margin-top: 0;
 	}
 }
 

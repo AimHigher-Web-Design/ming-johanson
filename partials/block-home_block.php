@@ -8,13 +8,15 @@
  */
 ?>
 
-   <div class="block parallax">
+   <div class="block parallax <?php if (get_field('left')) {
+   	echo 'left';
+   } ?>">
       <div>
          <?php echo file_get_contents(get_field('graphic')); ?>
          <blockquote><?php the_field('heading'); ?></blockquote>
          <p class="subtitle"><?php the_field('text'); ?></p>
       </div>
-      <img class="paral" src="<?php get_field('image'); ?>" />
+      <img class="paral" src="<?php echo get_field('image'); ?>" />
    </div>
 
 <?php if (get_field('call_to_action')): ?>

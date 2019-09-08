@@ -81,6 +81,9 @@ nav {
 	height: 115vw;
 	font-size: 3em;
 	position: relative;
+	overflow-y: hidden;
+	width: 100vw;
+	@extend %fullcentre_pos;
 
 	> * {
 		flex: 1 1 200px;
@@ -122,16 +125,18 @@ nav {
 	flex-wrap: wrap;
 	align-content: flex-start;
 	font-size: 1em;
+	position: relative;
 	text-align: right;
 
 	&.parallax {
-		padding: 50px 0;
+		// padding: 50px 0;
 	}
 
 	> div {
 		clear: both;
 		padding: 20px 0;
 		position: relative;
+		top: 0;
 
 		&:before {
 			background: rgba(255, 255, 255, 0.8);
@@ -146,29 +151,28 @@ nav {
 	}
 
 	.paral {
-		height: auto;
-		margin-right: calc(-1 * (50vw - 50%));
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		@extend %fullcentre_pos;
+		width: 200vw;
 		min-width: 100vw;
 		max-width: unset;
-		top: 0;
-		z-index: -1;
+		z-index: -2;
 	}
 
 	svg {
 		float: left;
-		margin-top: -100px;
+		// margin-top: -50px;
 		position: relative;
 		width: 40%;
+	}
 
-		&:before {
-			background: #fff;
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			bottom: 0;
-			width: 100%;
-			z-index: 0;
+	&.left {
+		text-align: left;
+
+		svg {
+			float: right;
 		}
 	}
 
@@ -240,6 +244,25 @@ nav {
 	cite {
 		font-size: 0.9em;
 		text-align: center;
+
+		&:before,
+		&:after {
+			color: $secondary;
+			position: absolute;
+			font-size: 8em;
+		}
+
+		&:before {
+			content: '❝';
+			top: -0.5em;
+			left: -0.2em;
+		}
+
+		&:after {
+			content: '❞';
+			bottom: -1em;
+			right: -0.2em;
+		}
 	}
 
 	input {
@@ -259,11 +282,24 @@ nav {
 		width: var(--radioWidth);
 	}
 
+	.profile {
+		$size: 50px;
+
+		border: 2px solid $secondary;
+		border-radius: 50%;
+		height: $size;
+		position: absolute;
+		bottom: calc(-1 * (5px + (#{$size} / 2)));
+		left: calc(50% - (#{$size} / 2));
+		width: $size;
+	}
+
 	@supports (grid-template-areas: '.') {
 		display: grid;
 		grid-template-columns: repeat(var(--testimonials), 1fr);
 		grid-template-rows: max-content auto;
-		grid-gap: 20px;
+		grid-row-gap: 50px;
+		grid-column-gap: 20px;
 		align-items: center;
 		justify-items: center;
 
