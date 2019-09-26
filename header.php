@@ -13,7 +13,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="profile" href="http://gmpg.org/xfn/11" />
 
-        <link href="/wp-content/themes/ming-johanson/style.css?v=2019-09-06T13:50:05.364Z" rel="stylesheet" />
+        <link href="/wp-content/themes/ming-johanson/style.css?v=2019-09-08T07:37:49.353Z?v=2019-09-06T13:50:05.364Z" rel="stylesheet" />
         
         <title>Ming Johanson</title>
         <meta name="description" content="WordPress Template" />
