@@ -9,7 +9,7 @@ footer {
 header {
 	align-items: center;
 	justify-content: center;
-	padding: 10px;
+	padding: 10px 0;
 	position: relative;
 	z-index: 50;
 
@@ -21,7 +21,9 @@ header {
 
 	.site-logo {
 		display: block;
-		padding: 0;
+		padding: 10px;
+		width: 100%;
+		max-width: 370px;
 
 		&:focus {
 			outline: auto;
@@ -29,8 +31,8 @@ header {
 
 		img,
 		svg {
-			width: 100%;
-			max-width: 370px;
+			width: auto;
+			max-width: 100%;
 			margin-bottom: 10px;
 		}
 	}
