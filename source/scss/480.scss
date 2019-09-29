@@ -25,7 +25,20 @@ header {
 
 	blockquote {
 		font-size: 1.3em;
-		padding: 30px 20px 20px;
+		padding: 30px 20px 70px;
+	}
+
+	.profile {
+		$size: 70px;
+
+		height: $size;
+		bottom: calc(-1 * (5px + (#{$size} / 2)));
+		left: calc(50% - (#{$size} / 2));
+		width: $size;
+	}
+
+	@supports (grid-template-areas: '.') {
+		grid-row-gap: 70px;
 	}
 }
 

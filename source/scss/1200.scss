@@ -1,12 +1,30 @@
 nav {
-  
-  li {
-    font-size: 1.3em;
-  }
+	li {
+		font-size: 1.3em;
+	}
 }
 
 .container {
-    &.main {
-        padding: 0;
-    }
+	&.main {
+		padding: 0;
+	}
+}
+
+.testimonials {
+	$size: 150px;
+
+	blockquote {
+		padding: 40px 30px ($size * 0.75);
+	}
+
+	.profile {
+		height: $size;
+		bottom: calc(-1 * (5px + (#{$size} / 2)));
+		left: calc(50% - (#{$size} / 2));
+		width: $size;
+	}
+
+	@supports (grid-template-areas: '.') {
+		grid-row-gap: $size;
+	}
 }
