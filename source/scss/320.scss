@@ -395,6 +395,37 @@ nav {
 	}
 }
 
+.timetable {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -10px;
+
+	div {
+		flex: 1 1 auto;
+		margin: 10px;
+	}
+
+	h3 {
+		background: $primary_light_50;
+		color: $neutral_dark_50;
+		font-size: 1.2em;
+		font-weight: bold;
+		margin: 0;
+		padding: 10px;
+	}
+
+	ul {
+		padding: 0;
+		margin: 0;
+		text-transform: lowercase;
+	}
+
+	li {
+		list-style-type: none;
+		padding: 5px;
+	}
+}
+
 .content {
 	figure {
 		&.wp-block-embed-youtube {
