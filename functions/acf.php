@@ -64,6 +64,18 @@
                 'post_types'        => array('page'),
                 'render_template'   => 'partials/block-fun_facts.php',
             ));
+
+            // Timetable
+            acf_register_block(array(
+                'name'				=> 'timetable',
+                'title'				=> __('Timetable'),
+                'description'		=> __('Timetable/Workshop Overview'),
+                'category'			=> 'widgets',
+                'icon'				=> 'schedule',
+                'mode'              => 'preview',
+                'post_types'        => array('page'),
+                'render_template'   => 'partials/block-timetable.php',
+            ));
         }
     }
 
@@ -700,6 +712,112 @@
             'active' => true,
             'description' => '',
         ));
+
+        //Block - Timetable
+        acf_add_local_field_group(array(
+            'key' => 'group_5d901a630d7c4',
+            'title' => 'Timetable',
+            'fields' => array(
+                array(
+                    'key' => 'field_5d901a7ad67dd',
+                    'label' => 'Day',
+                    'name' => 'day',
+                    'type' => 'repeater',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'collapsed' => '',
+                    'min' => 0,
+                    'max' => 0,
+                    'layout' => 'block',
+                    'button_label' => 'Add Day',
+                    'sub_fields' => array(
+                        array(
+                            'key' => 'field_5d901a8bd67de',
+                            'label' => 'Heading',
+                            'name' => 'heading',
+                            'type' => 'text',
+                            'instructions' => '',
+                            'required' => 0,
+                            'conditional_logic' => 0,
+                            'wrapper' => array(
+                                'width' => '',
+                                'class' => '',
+                                'id' => '',
+                            ),
+                            'default_value' => '',
+                            'placeholder' => '',
+                            'prepend' => '',
+                            'append' => '',
+                            'maxlength' => '',
+                        ),
+                        array(
+                            'key' => 'field_5d901aa4d67df',
+                            'label' => 'Items',
+                            'name' => 'items',
+                            'type' => 'repeater',
+                            'instructions' => '',
+                            'required' => 0,
+                            'conditional_logic' => 0,
+                            'wrapper' => array(
+                                'width' => '',
+                                'class' => '',
+                                'id' => '',
+                            ),
+                            'collapsed' => '',
+                            'min' => 0,
+                            'max' => 0,
+                            'layout' => 'row',
+                            'button_label' => 'Add Item',
+                            'sub_fields' => array(
+                                array(
+                                    'key' => 'field_5d901ae6d67e0',
+                                    'label' => 'Item',
+                                    'name' => 'item',
+                                    'type' => 'text',
+                                    'instructions' => '',
+                                    'required' => 0,
+                                    'conditional_logic' => 0,
+                                    'wrapper' => array(
+                                        'width' => '',
+                                        'class' => '',
+                                        'id' => '',
+                                    ),
+                                    'default_value' => '',
+                                    'placeholder' => '',
+                                    'prepend' => '',
+                                    'append' => '',
+                                    'maxlength' => '',
+                                ),
+                            ),
+                        ),
+                    ),
+                ),
+            ),
+            'location' => array(
+                array(
+                    array(
+                        'param' => 'block',
+                        'operator' => '==',
+                        'value' => 'acf/timetable',
+                    ),
+                ),
+            ),
+            'menu_order' => 0,
+            'position' => 'normal',
+            'style' => 'default',
+            'label_placement' => 'top',
+            'instruction_placement' => 'label',
+            'hide_on_screen' => '',
+            'active' => true,
+            'description' => '',
+        ));
+        
 
     endif;
 ?>

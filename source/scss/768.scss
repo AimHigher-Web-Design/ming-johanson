@@ -1,13 +1,15 @@
 header {
-	background: rebeccapurple;
 	justify-content: space-between;
 	align-items: center;
 	height: $height_header;
+	padding: 20px 0;
 
 	.site-logo {
+		padding: 0;
+		width: 30vw;
+		max-width: 500px;
+
 		svg {
-			width: 30vw;
-			max-width: 500px;
 			max-height: calc(#{$height_header} - 20px);
 		}
 	}
@@ -103,8 +105,52 @@ header {
 }
 
 .testimonials {
+	$size: 100px;
+
 	blockquote {
 		font-size: 1.6em;
-		padding: 40px 30px 30px;
+		padding: 40px 30px ($size * 0.75);
+	}
+
+	.profile {
+		height: $size;
+		bottom: calc(-1 * (5px + (#{$size} / 2)));
+		left: calc(50% - (#{$size} / 2));
+		width: $size;
+	}
+
+	@supports (grid-template-areas: '.') {
+		grid-row-gap: $size;
+	}
+}
+
+.content {
+	figure {
+		&.wp-block-embed-youtube {
+			$ratio: 281 / 500;
+			$width: 44vw;
+			$max_width: 500px;
+
+			height: $width * $ratio;
+			max-height: $max_width * $ratio;
+			width: $width;
+			max-width: $max_width;
+
+			iframe {
+				max-width: 100%;
+				height: $width * $ratio;
+				max-height: $max_width * $ratio;
+			}
+
+			&.alignleft {
+				float: left;
+				margin: 10px 0;
+			}
+
+			&.alignright {
+				float: right;
+				margin: 10px 0;
+			}
+		}
 	}
 }

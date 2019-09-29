@@ -7,11 +7,11 @@ footer {
 }
 
 header {
-	background: rebeccapurple;
 	align-items: center;
 	justify-content: center;
-	padding: 10px;
+	padding: 10px 0;
 	position: relative;
+	text-transform: lowercase;
 	z-index: 50;
 
 	a {
@@ -22,7 +22,9 @@ header {
 
 	.site-logo {
 		display: block;
-		padding: 0;
+		padding: 10px;
+		width: 100%;
+		max-width: 370px;
 
 		&:focus {
 			outline: auto;
@@ -30,8 +32,8 @@ header {
 
 		img,
 		svg {
-			width: 100%;
-			max-width: 370px;
+			width: auto;
+			max-width: 100%;
 			margin-bottom: 10px;
 		}
 	}
@@ -238,7 +240,7 @@ nav {
 	blockquote {
 		display: none;
 		font-size: 1em;
-		padding: 20px 10px 10px;
+		padding: 20px 10px;
 		width: 100%;
 	}
 
@@ -390,6 +392,59 @@ nav {
 	dd {
 		font-size: 3em;
 		margin: 0;
+	}
+}
+
+.timetable {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -10px;
+
+	div {
+		flex: 1 1 auto;
+		margin: 10px;
+	}
+
+	h3 {
+		background: $primary_light_50;
+		color: $neutral_dark_50;
+		font-size: 1.2em;
+		font-weight: bold;
+		margin: 0;
+		padding: 10px;
+	}
+
+	ul {
+		padding: 0;
+		margin: 0;
+		text-transform: lowercase;
+	}
+
+	li {
+		list-style-type: none;
+		padding: 5px;
+	}
+}
+
+.content {
+	figure {
+		&.wp-block-embed-youtube {
+			$ratio: 281 / 500;
+			$width: 90vw;
+			$max_width: 500px;
+
+			margin: 10px auto;
+			height: $width * $ratio;
+			max-height: $max_width * $ratio;
+			width: $width;
+			max-width: $max_width;
+
+			iframe {
+				max-width: 100%;
+				height: $width * $ratio;
+				max-height: $max_width * $ratio;
+			}
+		}
 	}
 }
 
