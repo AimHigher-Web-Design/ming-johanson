@@ -12,7 +12,6 @@ body {
 	position: absolute;
 	top: 0;
 	overflow-x: hidden;
-	text-transform: lowercase;
 	width: 100vw;
 }
 
@@ -38,6 +37,7 @@ h4,
 h5 {
 	font: $font_headings;
 	text-align: left;
+	text-transform: lowercase;
 }
 
 h1 {

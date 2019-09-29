@@ -11,6 +11,7 @@ header {
 	justify-content: center;
 	padding: 10px 0;
 	position: relative;
+	text-transform: lowercase;
 	z-index: 50;
 
 	a {
@@ -391,6 +392,28 @@ nav {
 	dd {
 		font-size: 3em;
 		margin: 0;
+	}
+}
+
+.content {
+	figure {
+		&.wp-block-embed-youtube {
+			$ratio: 281 / 500;
+			$width: 90vw;
+			$max_width: 500px;
+
+			margin: 10px auto;
+			height: $width * $ratio;
+			max-height: $max_width * $ratio;
+			width: $width;
+			max-width: $max_width;
+
+			iframe {
+				max-width: 100%;
+				height: $width * $ratio;
+				max-height: $max_width * $ratio;
+			}
+		}
 	}
 }
 
