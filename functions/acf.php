@@ -41,6 +41,30 @@
                 'render_template'   => 'partials/block-banner.php',
             ));
 
+            // Image Header
+            acf_register_block(array(
+                'name'				=> 'image_header',
+                'title'				=> __('Image Header'),
+                'description'		=> __('Image Header for top of page'),
+                'post_types'        => array('page'),
+                'category'			=> 'layout',
+                'icon'				=> 'align-center',
+                'mode'              => 'preview',
+                'render_template'   => 'partials/block-image_header.php',
+            ));
+
+            // Header
+            acf_register_block(array(
+                'name'				=> 'header',
+                'title'				=> __('Header Titles'),
+                'description'		=> __('Titles for top of page, for use with Image Header'),
+                'post_types'        => array('page'),
+                'category'			=> 'layout',
+                'icon'				=> 'align-center',
+                'mode'              => 'preview',
+                'render_template'   => 'partials/block-header.php',
+            ));
+
             // Testimonials
             acf_register_block(array(
                 'name'				=> 'testimonials',
@@ -818,6 +842,180 @@
             'description' => '',
         ));
         
+        //Image Header Selection
+        acf_add_local_field_group(array(
+            'key' => 'group_5db2bf00316ef',
+            'title' => 'Custom Meta',
+            'fields' => array(
+                array(
+                    'key' => 'field_5db2bf46e2616',
+                    'label' => 'Image Header',
+                    'name' => 'image_header',
+                    'type' => 'true_false',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'message' => '',
+                    'default_value' => 0,
+                    'ui' => 0,
+                    'ui_on_text' => '',
+                    'ui_off_text' => '',
+                ),
+            ),
+            'location' => array(
+                array(
+                    array(
+                        'param' => 'post_type',
+                        'operator' => '==',
+                        'value' => 'page',
+                    ),
+                ),
+            ),
+            'menu_order' => 0,
+            'position' => 'side',
+            'style' => 'default',
+            'label_placement' => 'top',
+            'instruction_placement' => 'label',
+            'hide_on_screen' => '',
+            'active' => true,
+            'description' => '',
+        ));
 
+        //Block - Image Header
+        acf_add_local_field_group(array(
+            'key' => 'group_5db2c3aa1bbaa',
+            'title' => 'Image Header',
+            'fields' => array(
+                array(
+                    'key' => 'field_5db2c3bfb6bd0',
+                    'label' => 'Image',
+                    'name' => 'image',
+                    'type' => 'image',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'return_format' => 'url',
+                    'preview_size' => 'medium',
+                    'library' => 'all',
+                    'min_width' => '',
+                    'min_height' => '',
+                    'min_size' => '',
+                    'max_width' => '',
+                    'max_height' => '',
+                    'max_size' => '',
+                    'mime_types' => '',
+                ),
+            ),
+            'location' => array(
+                array(
+                    array(
+                        'param' => 'block',
+                        'operator' => '==',
+                        'value' => 'acf/image-header',
+                    ),
+                ),
+            ),
+            'menu_order' => 0,
+            'position' => 'normal',
+            'style' => 'default',
+            'label_placement' => 'top',
+            'instruction_placement' => 'label',
+            'hide_on_screen' => '',
+            'active' => true,
+            'description' => '',
+        ));
+
+        //Block - Heading Titles
+        acf_add_local_field_group(array(
+            'key' => 'group_5db6502c3a275',
+            'title' => 'Titles',
+            'fields' => array(
+                array(
+                    'key' => 'field_5db6504391457',
+                    'label' => 'Title',
+                    'name' => 'title',
+                    'type' => 'text',
+                    'instructions' => '',
+                    'required' => 1,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'placeholder' => '',
+                    'prepend' => '',
+                    'append' => '',
+                    'maxlength' => '',
+                ),
+                array(
+                    'key' => 'field_5db6507b91458',
+                    'label' => 'Subtitle',
+                    'name' => 'subtitle',
+                    'type' => 'text',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'placeholder' => '',
+                    'prepend' => '',
+                    'append' => '',
+                    'maxlength' => '',
+                ),
+                array(
+                    'key' => 'field_5db6508e91459',
+                    'label' => 'Sub-Subtitle',
+                    'name' => 'sub-subtitle',
+                    'type' => 'text',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'placeholder' => '',
+                    'prepend' => '',
+                    'append' => '',
+                    'maxlength' => '',
+                ),
+            ),
+            'location' => array(
+                array(
+                    array(
+                        'param' => 'block',
+                        'operator' => '==',
+                        'value' => 'acf/header',
+                    ),
+                ),
+            ),
+            'menu_order' => 0,
+            'position' => 'normal',
+            'style' => 'default',
+            'label_placement' => 'top',
+            'instruction_placement' => 'label',
+            'hide_on_screen' => '',
+            'active' => true,
+            'description' => '',
+        ));
+        
     endif;
 ?>

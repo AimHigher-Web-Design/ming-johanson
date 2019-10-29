@@ -62,6 +62,7 @@ nav {
 	a {
 		display: block;
 		padding: 5px 10px 10px;
+		white-space: nowrap;
 	}
 }
 
@@ -117,8 +118,57 @@ nav {
 		z-index: -1;
 	}
 
+	&.sub {
+		height: auto;
+		padding: 0;
+		min-height: 200px;
+		max-height: 40vh;
+		overflow: hidden;
+
+		&:after {
+			background: #fff;
+			content: '';
+			opacity: 0.6;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+
+		img {
+			position: static;
+			width: 100vw;
+		}
+	}
+
 	& + .block {
 		padding-top: 0;
+	}
+}
+
+.headings {
+	text-align: center;
+	text-transform: lowercase;
+	font-weight: bold;
+	position: relative;
+	min-height: 200px;
+	margin-top: -200px;
+	z-index: 5;
+
+	.title {
+		color: $primary_dark_50;
+		font-size: 2em;
+		margin-top: 0;
+	}
+
+	.subtitle {
+		font-weight: normal;
+		text-transform: uppercase;
+	}
+
+	.sub {
+		font-size: 1.3em;
 	}
 }
 
@@ -504,9 +554,16 @@ footer {
 		justify-content: flex-end;
 
 		svg {
-			.cls-1,
-			.cls-2 {
+			.cls-n,
+			.cls-g,
+			.cls-s {
 				fill: $primary_light_75;
+			}
+
+			.cls-n,
+			.cls-s {
+				width: auto;
+				max-width: 0;
 			}
 		}
 
@@ -520,12 +577,16 @@ footer {
 				border-color: $secondary;
 
 				svg {
-					.cls-1 {
-						fill: #1c75bc;
+					.cls-n {
+						fill: #36454f;
 					}
 
-					.cls-2 {
-						fill: #16a6b1;
+					.cls-s {
+						fill: #00acbb;
+					}
+
+					.cls-g {
+						fill: url(#AimHigherGradient);
 					}
 				}
 			}

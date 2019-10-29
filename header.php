@@ -29,7 +29,7 @@
         <?php wp_head(); ?>
     </head>
 
-<body class="<?php if(is_front_page()) {echo 'home';}; ?>">
+<body class="<?php if(is_front_page()) {echo 'home image-header';} else if(get_field('image_header')) {echo 'image-header';}; ?>">
     <header>
         <a href="/" class="site-logo">
             <?php
