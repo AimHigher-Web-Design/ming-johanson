@@ -148,6 +148,7 @@ nav {
 }
 
 .headings {
+	color: $primary_dark_25;
 	text-align: center;
 	text-transform: lowercase;
 	font-weight: bold;
@@ -495,6 +496,31 @@ nav {
 				max-height: $max_width * $ratio;
 			}
 		}
+	}
+}
+
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	margin: -10px;
+	padding: 0;
+
+	li {
+		flex: 1 1 150px;
+		list-style-type: none;
+		padding: 5px;
+	}
+}
+
+.media {
+	width: 50%;
+	min-width: 200px;
+
+	iframe {
+		$ratio: 315/560;
+
+		height: 100% * $ratio;
+		width: 100%;
 	}
 }
 
