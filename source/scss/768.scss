@@ -154,3 +154,27 @@ header {
 		}
 	}
 }
+
+.media {
+	grid-template-columns: repeat(2, 1fr);
+
+	iframe {
+		$ratio: 315/560;
+		$width: 320px;
+
+		height: $width * $ratio;
+		width: $width;
+	}
+}
+
+@media (min-width: 1000px) {
+	.media {
+		iframe {
+			$ratio: 315/560;
+			$width: 440px;
+
+			height: $width * $ratio;
+			width: $width;
+		}
+	}
+}

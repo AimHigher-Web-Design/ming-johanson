@@ -13,6 +13,21 @@ header {
 	justify-content: center;
 }
 
+.media {
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+	iframe {
+		$ratio: 315/560;
+		$width: 40vw;
+		$min_width: 300px;
+
+		height: $width * $ratio;
+		min-height: $min_width * $ratio;
+		width: $width;
+		min-width: $min_width;
+	}
+}
+
 footer {
 	justify-content: space-between;
 

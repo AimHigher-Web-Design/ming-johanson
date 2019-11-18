@@ -58,6 +58,21 @@ header {
 	}
 }
 
+.media {
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+	iframe {
+		$ratio: 315/560;
+		$width: 50vw;
+		$min_width: 350px;
+
+		height: $width * $ratio;
+		min-height: $min_width * $ratio;
+		width: $width;
+		min-width: $min_width;
+	}
+}
+
 footer {
 	padding: 30px 20px 20px;
 
