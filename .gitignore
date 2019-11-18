@@ -16,7 +16,7 @@ wp-content/plugins/hello.php
 /sitemap.xml
 /sitemap.xml.gz
 
-.env*
+.env
 
 node_modules/
 

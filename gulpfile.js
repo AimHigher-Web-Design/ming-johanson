@@ -1,18 +1,20 @@
+require('dotenv').config()
+
 //Variables
 var gulp = require('gulp')
 var sass = require('gulp-sass')
 var sourcemaps = require('gulp-sourcemaps')
 var prettier = require('gulp-prettier')
 var replace = require('gulp-replace')
-var browserSync = require('browser-sync').create();
-var reload      = browserSync.reload;
+var browserSync = require('browser-sync').create()
+var reload = browserSync.reload
 
 //File Paths
 var sassFiles = 'source/scss/**/*.scss',
 	mainSassFile = 'source/scss/style.scss',
 	cssFiles = '.',
 	sourceMaps = '/source/maps',
-	styleSheet = '/wp-content/themes/ming-johanson/style.css'
+	styleSheet = `/wp-content/themes/${process.env.THEME_NAME}/style.css`
 currentDate = new Date().toISOString()
 
 //Compile main sass into css
@@ -28,17 +30,17 @@ function sassy() {
 //Watch for changes in sass files and running sass compile
 function watch() {
 	browserSync.init({
-		proxy: 'http://mingjohanson.local/'
-	  });
+		proxy: process.env.WP_URL,
+	})
 
 	gulp.watch(sassFiles, sassy)
 	gulp.watch([
-		"./*.php",
-		"./layouts/**/*.php",
-		"./partials/**/*.php",
-		"./woocommerce/**/*.php",
-		"./source/scss/**/*.scss"
-	]).on("change", reload)
+		'./*.php',
+		'./layouts/**/*.php',
+		'./partials/**/*.php',
+		'./woocommerce/**/*.php',
+		'./source/scss/**/*.scss',
+	]).on('change', reload)
 }
 
 function styleVersion() {

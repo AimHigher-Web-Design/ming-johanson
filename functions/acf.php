@@ -124,6 +124,18 @@
                 'mode'              => 'preview',
                 'render_template'   => 'partials/block-media.php',
             ));
+
+            //Media Block 
+            acf_register_block(array(
+                'name'				=> 'grid',
+                'title'				=> __('Grid Container'),
+                'description'		=> __('Grid Layout Container'),
+                'post_types'        => array('page'),
+                'category'			=> 'layout',
+                'icon'				=> 'screenoptions',
+                'mode'              => 'preview',
+                'render_template'   => 'partials/block-grid.php',
+            ));
         }
     }
 

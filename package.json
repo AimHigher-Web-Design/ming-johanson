@@ -21,6 +21,7 @@
     "prettier": "^1.16.4"
   },
   "dependencies": {
-    "browser-sync": "^2.26.3"
+    "browser-sync": "^2.26.3",
+    "dotenv": "^8.2.0"
   }
 }
