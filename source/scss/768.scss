@@ -4,6 +4,7 @@ header {
 	flex-wrap: nowrap;
 	height: $height_header;
 	padding: 20px 0;
+	overflow-x: visible;
 
 	.site-logo {
 		padding: 0;
@@ -20,6 +21,10 @@ header {
 			padding: 5px 10px;
 		}
 	}
+}
+
+main {
+	overflow-x: visible;
 }
 
 .image-header {
