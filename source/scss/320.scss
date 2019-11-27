@@ -6,6 +6,12 @@ footer {
 	max-width: 1200px;
 }
 
+main {
+	width: 100vw;
+	overflow-x: hidden;
+	padding: 0 5vw;
+}
+
 header {
 	display: flex;
 	align-items: center;
@@ -14,6 +20,7 @@ header {
 	position: relative;
 	text-transform: lowercase;
 	z-index: 50;
+	overflow-x: hidden;
 
 	a {
 		color: $neutral;
