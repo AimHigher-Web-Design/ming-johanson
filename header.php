@@ -9,7 +9,7 @@
 ?>
 <html>
     <head>
-        <meta charset="<?php bloginfo( 'charset' ); ?>" />
+        <meta charset="<?php bloginfo('charset'); ?>" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="profile" href="http://gmpg.org/xfn/11" />
 
@@ -29,21 +29,38 @@
         <?php wp_head(); ?>
     </head>
 
-<body class="<?php if(is_front_page()) {echo 'home image-header';} else if(get_field('image_header')) {echo 'image-header';}; ?>">
+<body class="<?php if (is_front_page()) {
+	echo 'home image-header';
+} elseif (get_field('image_header')) {
+	echo 'image-header';
+} ?>">
     <header>
         <a href="/" class="site-logo">
             <?php
-                $logo = wp_get_attachment_image_src(get_theme_mod( 'custom_logo' ), 'full')[0];
-                echo file_get_contents($logo);
+            $logo = wp_get_attachment_image_src(get_theme_mod('custom_logo'), 'full')[0];
+            echo file_get_contents($logo);
             ?>
         </a>
 
-        <?php wp_nav_menu(array(
-            'theme_location' => 'main_menu',
-            'container' => 'nav',
-            'container_class' => 'menu main'
-            ));
+
+
+        <?php
+        $hamburger =
+        	get_site_url() . '/wp-content/themes/ming-johanson/resources/img/hamburger_close.svg';
+        $menu_toggle =
+        	'<button class="hamburger" onClick="mobileMenu()">' .
+        	file_get_contents($hamburger) .
+        	'<span>Open Menu</span></button>';
+
+        wp_nav_menu(array(
+        	'theme_location' => 'main_menu',
+        	'container' => 'nav',
+        	'container_class' => 'menu main',
+        	'items_wrap' => $menu_toggle . '<ul id="%1$s" data-test="true" class="%2$s">%3$s</ul>',
+        ));
         ?>
     </header>
 
-    <main  class="<?php if(is_front_page()) {echo 'home';}; ?>">
+    <main  class="<?php if (is_front_page()) {
+    	echo 'home';
+    } ?>">

@@ -1,19 +1,15 @@
-var mobileMenu = function() {
-	if (document.getElementsByClassName('nav-main active').length < 1) {
-		document.getElementById('nav-main').classList.add('active')
+const mobileMenu = () => {
+	const menu = document.querySelector('nav.menu.main ul'),
+		hamburger = document.querySelector('nav.menu.main button.hamburger')
+
+	if (document.querySelectorAll('nav.menu.main ul.active').length < 1) {
+		menu.classList.add('active')
+		hamburger.classList.add('active')
 	} else {
-		document.getElementById('nav-main').classList.remove('active')
+		menu.classList.remove('active')
+		hamburger.classList.remove('active')
 	}
 }
-
-// window.onscroll = function() {
-//         if(document.body.scrollTop > 20) {
-//             document.getElementById('root').classList.add('scrolled');
-//         }
-//         else {
-//             document.getElementById('root').classList.remove('scrolled');
-//         };
-//     };
 
 document
 	.querySelectorAll(

@@ -7,7 +7,7 @@
     "url": "git@github.com:AimHigher-Web-Design/ming-johanson.git"
   },
   "scripts": {
-    "start": "gulp sassy && gulp watch",
+    "start": "gulp watch",
     "build": "gulp sassy && gulp styleVersion"
   },
   "author": "AimHigher Web Design",

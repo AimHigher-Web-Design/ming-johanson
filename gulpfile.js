@@ -28,8 +28,10 @@ function sassy() {
 }
 
 //Watch for changes in sass files and running sass compile
+
 function watch() {
 	browserSync.init({
+		port: process.env.PORT || 3000,
 		proxy: process.env.WP_URL,
 	})
 

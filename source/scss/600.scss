@@ -1,8 +1,26 @@
 header {
+	justify-content: center;
+	flex-wrap: wrap;
+
 	.site-logo {
 		img,
 		svg {
 			margin-bottom: 0;
+		}
+	}
+
+	nav {
+		.hamburger {
+			display: none;
+		}
+
+		ul {
+			background: transparent;
+			border: none;
+			display: flex;
+			padding: 0;
+			position: static;
+			width: 100%;
 		}
 	}
 }
