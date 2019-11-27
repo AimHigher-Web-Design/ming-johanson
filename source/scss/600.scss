@@ -14,13 +14,15 @@ header {
 			display: none;
 		}
 
-		ul {
-			background: transparent;
-			border: none;
-			display: flex;
-			padding: 0;
-			position: static;
-			width: 100%;
+		&.main {
+			ul {
+				background: transparent;
+				border: none;
+				display: flex;
+				padding: 0;
+				position: static;
+				width: 100%;
+			}
 		}
 	}
 }
