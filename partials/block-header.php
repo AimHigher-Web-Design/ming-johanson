@@ -12,6 +12,6 @@
    <p class="title"><?php echo get_field('title'); ?></p>
    <p class="subtitle"><?php echo get_field('subtitle'); ?></p>
    <?php if (get_field('sub_subtitle') !== '') {
-   	echo '<p class="sub">' . get_field('title') . '</p>';
+   	echo '<p class="sub">' . get_field('sub_subtitle') . '</p>';
    } ?>
 </div>
