@@ -323,12 +323,14 @@ form {
 }
 
 button,
-.btn {
+.btn,
+.wp-block-button__link {
 	background: none;
 	border: 2px solid $primary_dark_50;
 	color: $primary_dark_50;
 	cursor: pointer;
 	display: block;
+	font-size: 1em;
 	font-weight: 700;
 	margin: 10px 0;
 	padding: 10px 20px;
@@ -343,15 +345,47 @@ button,
 	}
 
 	&.secondary {
-		background: $primary;
-		border-color: $primary;
+		background: $secondary;
+		border-color: $secondary;
 		color: #fff;
 
 		&:active,
 		&:hover,
 		&:focus {
 			background: #fff;
-			color: $primary;
+			color: $secondary;
+		}
+	}
+}
+
+.wp-block-button {
+	background: transparent;
+	border: none;
+	padding: none;
+
+	.wp-block-button__link {
+		border: 2px solid $primary_dark_50;
+		display: inline-block;
+		padding: 20px 30px;
+		width: auto;
+	}
+
+	&.secondary {
+		background: transparent;
+		border: none;
+		padding: none;
+
+		.wp-block-button__link {
+			background: $secondary;
+			border-color: $secondary;
+			color: #fff;
+
+			&:active,
+			&:hover,
+			&:focus {
+				background: #fff;
+				color: $secondary;
+			}
 		}
 	}
 }

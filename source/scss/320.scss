@@ -94,22 +94,29 @@ nav {
 	}
 
 	ul {
-		// display: flex;
-		// // justify-content: center;
-		// overflow-y: visible;
-		// overflow-x: auto;
+		display: flex;
+		// justify-content: center;
+		overflow-y: visible;
+		overflow-x: auto;
+	}
 
-		background: #fff;
-		border-top: 5px solid $primary;
-		display: none;
-		position: absolute;
-		padding-right: 10px;
-		top: 100%;
-		left: calc(100vw - 300px);
-		width: 300px;
+	&.main {
+		ul {
+			// justify-content: center;
+			overflow: auto;
 
-		&.active {
-			display: block;
+			background: #fff;
+			border-top: 5px solid $primary;
+			display: none;
+			position: absolute;
+			padding-right: 10px;
+			top: 100%;
+			left: calc(100vw - 300px);
+			width: 300px;
+
+			&.active {
+				display: block;
+			}
 		}
 	}
 
