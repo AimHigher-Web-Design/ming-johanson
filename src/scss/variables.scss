@@ -1,6 +1,3 @@
-// Import stuff
-@import url('https://fonts.googleapis.com/css?family=Roboto|Space+Mono');
-
 // Colours
 $primary: #10bdc8;
 $primary_light_10: #e7f8fa;
@@ -40,6 +37,11 @@ $neutral_dark_25: #161617;
 $neutral_dark_50: #2c2d2e;
 $neutral_dark_75: #424345;
 $neutral_dark_90: #4f5053;
+
+$sunset: #F2664E;
+$sunrise: #ED1065;
+$water: #279DD9;
+$forest: #587F43;
 
 $gradient_linear: linear-gradient(
 	45deg,
@@ -94,15 +96,23 @@ $gradient: radial-gradient(
 	src: url('./source/fonts/ArnoPro-BoldItalic.otf') format('opentype');
 }
 
-$font_regular: 400 1em 'Arno Pro', serif;
-$font_bold: 700 1em 'Arno Pro', serif;
-$font_headings: 700 1.5em 'Arno Pro', serif;
+$font_regular: 'Arno Pro', serif;
+$font_bold: 'Arno Pro', serif;
+$font_headings: 'Arno Pro', serif;
 
 // Variables
 $height_header: 15vh;
 $width_inner: 75rem;
 
 // Extends
+%cover {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
 %fullcentre_pos {
 	left: calc(-1 * (50vw - 50%));
 }

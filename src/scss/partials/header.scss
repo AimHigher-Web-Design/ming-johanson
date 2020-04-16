@@ -1,0 +1,166 @@
+header {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 10px 0 0;
+	text-transform: lowercase;
+
+	a {
+		color: $neutral;
+		font-family: $font_headings;
+		text-decoration: none;
+	}
+
+	.site-logo {
+		display: block;
+		min-height: 90px;
+		padding: 10px;
+		width: 80%;
+		max-width: 370px;
+
+		&:focus {
+			outline: auto;
+		}
+
+		img,
+		svg {
+			width: auto;
+			max-width: 100%;
+			margin-bottom: 10px;
+		}
+	}
+}
+
+nav {
+	position: relative;
+	width: 100%;
+	z-index: 50;
+
+	.hamburger {
+		background: transparent;
+		border: 1px solid $neutral;
+		border-left: none;
+		border-right: none;
+		margin: 0;
+		padding: 10px;
+		width: 100%;
+
+		svg {
+			height: 20px;
+			width: 20px;
+
+			path {
+				fill: $neutral;
+			}
+		}
+
+		span {
+			position: absolute;
+			right: -200vw;
+		}
+
+		.js-transition-icon__state {
+			&:first-child {
+				display: block;
+				transform: translate(0, 0) scale(1);
+			}
+
+			&:nth-child(2) {
+				display: none;
+				transform: translate(200%, 200%) scale(0.8);
+			}
+		}
+
+		&.active {
+			.js-transition-icon__state {
+				&:first-child {
+					display: none;
+					transform: translate(200%, 200%) scale(0.8);
+				}
+
+				&:nth-child(2) {
+					display: block;
+					transform: translate(0, 0) scale(1);
+				}
+			}
+		}
+	}
+
+	ul {
+		display: flex;
+		overflow-y: visible;
+		overflow-x: auto;
+	}
+
+	&.main {
+		ul {
+			background: #fff;
+			border-top: 5px solid $primary;
+			display: none;
+			position: absolute;
+			padding-right: 10px;
+			top: 100%;
+			left: calc(100vw - 300px);
+			width: 300px;
+
+			&.active {
+				display: block;
+			}
+		}
+	}
+
+	li {
+		font-size: 0.9em;
+		font-weight: 500;
+
+		&.current_page_item {
+			color: $secondary;
+		}
+	}
+
+	a {
+		display: block;
+		padding: 20px;
+		white-space: nowrap;
+	}
+}
+
+@media(min-width: 600px) {
+	header {	
+		nav {
+			border-top: 1px solid $neutral;
+			border-bottom: 1px solid $neutral;
+
+			.hamburger {
+				display: none;
+			}
+	
+			&.main {
+				ul {
+					background: transparent;
+					border: none;
+					display: flex;
+					justify-content: center;
+					padding: 0;
+					position: static;
+					width: 100%;
+
+					&.active {
+						display: flex;
+					}
+
+					a {
+						padding: 10px 20px;
+					}
+
+					.current_page_item {
+						a {
+							color: $primary;
+							font-weight: bold;
+						}
+					}
+				}
+			}
+		}
+	}
+}

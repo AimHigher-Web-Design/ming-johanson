@@ -10,10 +10,10 @@ var browserSync = require('browser-sync').create()
 var reload = browserSync.reload
 
 //File Paths
-var sassFiles = 'source/scss/**/*.scss',
-	mainSassFile = 'source/scss/style.scss',
+var sassFiles = 'src/scss/**/*.scss',
+	mainSassFile = 'src/scss/style.scss',
 	cssFiles = '.',
-	sourceMaps = '/source/maps',
+	sourceMaps = '/src/maps',
 	styleSheet = `/wp-content/themes/${process.env.THEME_NAME}/style.css`
 currentDate = new Date().toISOString()
 

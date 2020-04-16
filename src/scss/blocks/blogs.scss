@@ -1,0 +1,74 @@
+.blogs {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin: 20px 0;
+
+	article {
+		background: var(--background);
+		display: flex;
+		flex: 1 1 250px;
+		margin: 10px;
+		padding: 30px;
+		position: relative;
+		text-transform: lowercase;
+		max-width: 300px;
+
+		a {
+			display: block;
+			text-decoration: none;
+
+			&:active, &:hover, &:focus {
+				background: none;
+
+				h3 {
+					text-decoration: underline;
+				}
+			}
+		}
+
+		h3 {
+			background: rgba(0, 0, 0, 0.6);
+			color: #fff;
+			height: 100%;
+			font-size: 1em;
+			padding: 10px 10px 2em;
+			margin: 0;
+			text-align: right;
+		}
+
+		.category {
+			background: #000;
+			font-size: 0.8em;
+			padding: 10px 15px;
+			position: absolute;
+			top: -15px;
+			width: auto;
+		}
+
+		&.business {
+			.category {
+				color: $forest;
+			}
+		}
+
+		&.social {
+			.category {
+				color: $water;
+			}
+		}
+
+		&.mental-health {
+			.category {
+				color: $sunset;
+			}
+		}
+	}
+}
+
+
+@media(min-width: 768px) {
+	.blogs {
+		flex-wrap: nowrap;
+	}
+}

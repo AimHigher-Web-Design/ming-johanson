@@ -6,7 +6,7 @@ body {
 	--icon-size: 40px;
 
 	color: $neutral_light_90;
-	font: $font_regular;
+	font-family: $font_regular;
 	font-size: 18px;
 	margin: 0;
 	position: absolute;
@@ -36,7 +36,7 @@ h2,
 h3,
 h4,
 h5 {
-	font: $font_headings;
+	font-family: $font_headings;
 	text-align: left;
 	text-transform: lowercase;
 }

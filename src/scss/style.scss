@@ -2,7 +2,7 @@
 Theme Name: Ming Johanson
 Author: AimHigher Web Design
 Description: Custom WordPress Template
-Version: 1.0.0
+Version: 2.0.0
 */
 
 @import 'variables.scss';
@@ -26,3 +26,9 @@ Version: 1.0.0
 @media (min-width: 75rem) { // ~ 1344px
     @import '1200.scss';
 }
+
+@import './partials/header.scss';
+@import './blocks/banner.scss';
+@import './blocks/containers.scss';
+@import './blocks/team_profile.scss';
+@import './blocks/blogs.scss';

@@ -1,6 +1,7 @@
 <?php
     require_once(__DIR__ . '/functions/acf.php');
     require_once(__DIR__ . '/functions/wordpress.php');
+    require_once(__DIR__ . '/functions/blog_block.php');
 
     // Define Nav Menus
     register_nav_menus(array (
@@ -27,5 +28,12 @@
             return $items;
         }
     }
+
+    // Add Featured Image Support
+    function aimhigher_post_thumbnails() {
+        add_theme_support( 'post-thumbnails' );
+    };
+
+    add_action( 'after_setup_theme', 'aimhigher_post_thumbnails' );
     
 ?>

@@ -1,0 +1,39 @@
+.container {
+	margin: 0 auto;
+	max-width: 1200px;
+}
+
+.image-container {
+	background: var(--backgroundImage);
+	background-size: cover;
+	margin-left: -5vw;
+	padding: 20px 5vw;
+	width: 100vw;
+}
+
+.colour-container {
+	color: #fff;
+	margin: 40px auto;
+	padding: 20px 40px;
+	position: relative;
+	z-index: 0;
+
+	h2, h3, h4 {
+		color: inherit;
+		margin-top: 0;
+		text-align: center;
+	}
+
+	&:before {
+		background: var(--background);
+		content: '';
+		@extend %cover;
+		z-index: -1;
+	}
+
+	&.transparent {
+		&:before {
+			opacity: 0.6;
+		}
+	}
+}

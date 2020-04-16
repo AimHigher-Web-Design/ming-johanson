@@ -1,0 +1,20 @@
+.team {
+	display: flex;
+	flex-wrap: wrap;
+
+	.profile {
+		position: relative;
+		overflow: hidden;
+		width: 200px;
+
+		img {
+			height: 200px;
+			width: auto;
+			max-width: unset;
+		}
+
+		figcaption {
+			display: none;
+		}
+	}
+}

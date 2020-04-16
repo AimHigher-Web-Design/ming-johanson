@@ -1,72 +1,10 @@
-header {
-	justify-content: space-between;
-	align-items: center;
-	flex-wrap: nowrap;
-	height: $height_header;
-	padding: 20px 0;
-	overflow-x: visible;
 
-	.site-logo {
-		padding: 0;
-		width: 30vw;
-		max-width: 500px;
-
-		svg {
-			max-height: calc(#{$height_header} - 20px);
-		}
-	}
-
-	nav {
-		a {
-			padding: 5px 10px;
-		}
-	}
-}
 
 main {
 	overflow-x: visible;
 }
 
-.image-header {
-	header {
-		&:before {
-			background: rgba(0, 0, 0, 0.2);
-			content: '';
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			left: calc(-1 * (50vw - 50%));
-			width: 100vw;
-			z-index: -1;
-		}
 
-		.site-logo {
-			path {
-				fill: #fff;
-			}
-		}
-
-		nav {
-			a {
-				color: #fff;
-			}
-		}
-	}
-}
-
-.banner {
-	font-size: 4.5em;
-	height: 90vh;
-	margin-top: -1 * $height_header;
-	padding: $height_header 0 50px;
-	// position: static;
-	overflow: hidden;
-
-	img {
-		top: calc(-1 * #{$height_header});
-		width: auto;
-	}
-}
 
 .block {
 	display: block;
