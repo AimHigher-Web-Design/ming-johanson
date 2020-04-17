@@ -40,25 +40,3 @@
 	}
 }
 
-footer {
-	padding: 30px 20px 20px;
-
-	nav {
-		&.menu {
-			&.social {
-				width: 40%;
-			}
-
-			svg {
-				margin: 20px;
-			}
-		}
-	}
-
-	.logo {
-		a {
-			width: 40%;
-			min-width: 200px;
-		}
-	}
-}

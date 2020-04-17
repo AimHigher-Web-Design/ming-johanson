@@ -72,33 +72,61 @@ $gradient: radial-gradient(
 	font-family: 'Arno Pro';
 	font-style: normal;
 	font-weight: 400;
-	src: url('./source/fonts/ArnoPro-Regular.otf') format('opentype');
+	src: url('./src/fonts/ArnoPro-Regular.otf') format('opentype');
 }
 
 @font-face {
 	font-family: 'Arno Pro';
 	font-style: italic;
 	font-weight: 400;
-	src: url('./source/fonts/ArnoPro-Italic.otf') format('opentype');
+	src: url('./src/fonts/ArnoPro-Italic.otf') format('opentype');
 }
 
 @font-face {
 	font-family: 'Arno Pro';
 	font-style: normal;
 	font-weight: 700;
-	src: url('./source/fonts/ArnoPro-Bold.otf') format('opentype');
+	src: url('./src/fonts/ArnoPro-Bold.otf') format('opentype');
 }
 
 @font-face {
 	font-family: 'Arno Pro';
 	font-style: italic;
 	font-weight: 700;
-	src: url('./source/fonts/ArnoPro-BoldItalic.otf') format('opentype');
+	src: url('./src/fonts/ArnoPro-BoldItalic.otf') format('opentype');
 }
 
-$font_regular: 'Arno Pro', serif;
-$font_bold: 'Arno Pro', serif;
-$font_headings: 'Arno Pro', serif;
+@font-face {
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 400;
+	src: url('./src/fonts/Roboto-Regular.otf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Roboto';
+	font-style: italic;
+	font-weight: 400;
+	src: url('./src/fonts/Roboto-Italic.otf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 700;
+	src: url('./src/fonts/Roboto-Bold.otf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Roboto';
+	font-style: italic;
+	font-weight: 700;
+	src: url('./src/fonts/Roboto-BoldItalic.otf') format('truetype');
+}
+
+$font_regular: 'Segoe UI', 'Roboto', Arial, sans-serif;
+$font_headings: 'Segoe UI', 'Roboto', Arial, sans-serif;
+$font_feature: 'Arno Pro', serif;
 
 // Variables
 $height_header: 15vh;

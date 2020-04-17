@@ -1,0 +1,137 @@
+footer {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	max-width: 1200px;
+	margin: 0 auto;
+
+	nav {
+		--icon-size: 60px;
+		width: 100%;
+		max-width: 400px;
+
+		ul {
+			display: flex;
+			justify-content: flex-end;
+		}
+
+		&.menu {
+			svg {
+				margin: 0;
+			}
+		}
+	}
+
+	.logo {
+		display: flex;
+		padding: 0 20px 20px;
+		width: 100%;
+
+		img {
+			opacity: 0.5;
+		}
+
+		a {
+			display: block;
+			width: 60%;
+			max-width: 200px;
+
+			&:active,
+			&:hover,
+			&:focus {
+				img {
+					opacity: 1;
+				}
+			}
+		}
+
+		h3 {
+			font-size: 0.8em;
+			margin-left: 20px;
+			width: 40%;
+		}
+	}
+
+	.aimhigher {
+		align-self: center;
+		justify-content: flex-end;
+
+		svg {
+			.cls-n,
+			.cls-g,
+			.cls-s {
+				fill: $primary_light_75;
+			}
+
+			.cls-n,
+			.cls-s {
+				width: auto;
+				max-width: 0;
+			}
+		}
+
+		a {
+			border: 3px solid transparent;
+
+			&:active,
+			&:hover,
+			&:focus {
+				background: none;
+				border-color: $secondary;
+
+				svg {
+					.cls-n {
+						fill: #36454f;
+					}
+
+					.cls-s {
+						fill: #00acbb;
+					}
+
+					.cls-g {
+						fill: url(#AimHigherGradient);
+					}
+				}
+			}
+		}
+	}
+}
+
+
+@media(min-width: 480px) {
+	footer {
+		padding: 30px 20px 20px;
+	
+		nav {
+			&.menu {
+				&.social {
+					width: 40%;
+				}
+	
+				svg {
+					margin: 20px;
+				}
+			}
+		}
+	
+		.logo {
+			a {
+				width: 40%;
+				min-width: 200px;
+			}
+		}
+	}
+	
+}
+
+@media(min-width: 600px) {
+	footer {
+		justify-content: space-between;
+	
+		.aimhigher {
+			width: 40%;
+			max-width: 200px;
+		}
+	}
+	
+}

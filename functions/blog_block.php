@@ -5,7 +5,7 @@ function blog_block() {
 
 	$postsBusiness = get_posts(array(
 		'numberposts'	=> '1',
-		'category'   	=> '8',
+		'category'   	=> '7',
 		'orderby'		=> 'date',
 		'order'			=> 'DESC',
 		'post_type'		=> 'post'
@@ -13,7 +13,7 @@ function blog_block() {
 
 	$postsSocial = get_posts(array(
 		'numberposts'	=> '1',
-		'category'   	=> '7',
+		'category'   	=> '4',
 		'orderby'		=> 'date',
 		'order'			=> 'DESC',
 		'post_type'		=> 'post'

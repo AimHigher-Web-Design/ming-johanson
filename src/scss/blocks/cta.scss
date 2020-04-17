@@ -2,12 +2,20 @@
 	background: var(--backgroundColour);
 	color: var(--textColour);
 	display: block;
+	font-family: $font_feature;
 	font-size: 1.2em;
 	font-weight: bold;
 	text-align: center;
 	padding: 15px;
 	margin: 0 calc(-1 * (50vw - 50%));
 	width: 100vw;
+
+	p {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+	}
 
 	a {
 		border: 2px solid var(--textColour);

@@ -4,6 +4,7 @@
 	background-position: center top;
 	background-repeat: no-repeat;
 	margin-left: -5vw;
+	min-height: 200px;
 	padding: 10px;
 	text-align: center;
 	width: 100vw;
@@ -12,6 +13,8 @@
 		background: none;
 		border: none;
 		color: #fff;
+		font-family: $font_regular;
+		font-style: normal;
 		font-weight: bold;
 		margin: 0;
 		margin-top: 30px;
@@ -29,6 +32,7 @@
 		color: #fff;
 		border-radius: 10px;
 		display: inline-block;
+		font-family: $font_regular;
 		margin: 50px auto;
 		padding: 10px 15px;
 		text-transform: lowercase;
@@ -68,6 +72,7 @@
 
 @media(min-width: 1000px) {
 	.banner {
+		min-height: 300px;
 		padding: 80px 5vw;
 
 		blockquote {
@@ -79,6 +84,23 @@
 
 @media(min-width: 1300px) {
 	.banner {
-		padding: 80px calc(50vw - 600px);
+		min-height: 400px;
+		margin-left: calc((600px - 50vw) - 5vw);
+		padding: 80px calc((50vw - 600px) + 5vw);
+		width: 110vw;
+	}
+
+	.home {
+		.banner {
+			margin-left: -5vw;
+		}
+	}
+}
+
+@media(min-width: 1350px) {
+	.banner {
+		margin-left: calc((600px - 50vw));
+		padding: 80px calc((50vw - 600px));
+		width: 100vw;
 	}
 }
