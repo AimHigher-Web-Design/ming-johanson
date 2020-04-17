@@ -1,0 +1,59 @@
+.cta {
+	background: var(--backgroundColour);
+	color: var(--textColour);
+	display: block;
+	font-size: 1.2em;
+	font-weight: bold;
+	text-align: center;
+	padding: 15px;
+	margin: 0 calc(-1 * (50vw - 50%));
+	width: 100vw;
+
+	a {
+		border: 2px solid var(--textColour);
+		color: var(--textColour);
+		display: inline-block;
+		line-height: 1;
+		margin: 1em 20px 0;
+		padding: 10px 15px;
+		text-decoration: none;
+
+		&:active,
+		&:hover,
+		&:focus {
+			animation: animatedBackground 2s linear reverse infinite;
+			background: $gradient_linear;
+			background-size: 200%;
+			background-position: bottom left;
+			color: var(--textColour);
+
+			@media (prefers-reduced-motion: reduce) {
+				border-color: var(--textColour);
+				background: var(--textColour);
+				color: var(--backgroundColour)
+			}
+		}
+	}
+}
+
+@media(min-width: 480px) {
+	.cta {
+		font-size: 1em;
+
+		a {
+			margin-top: 0;
+		}
+	}
+}
+
+@media(min-width: 768px) {
+	
+	.cta {
+		font-size: 1.4em;
+
+		a {
+			display: inline;
+			margin-top: 0;
+		}
+	}
+}

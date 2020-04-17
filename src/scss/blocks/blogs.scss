@@ -6,6 +6,7 @@
 
 	article {
 		background: var(--background);
+		background-size: cover;
 		display: flex;
 		flex: 1 1 250px;
 		margin: 10px;
@@ -40,6 +41,7 @@
 		.category {
 			background: #000;
 			font-size: 0.8em;
+			font-weight: bold;
 			padding: 10px 15px;
 			position: absolute;
 			top: -15px;
@@ -70,5 +72,28 @@
 @media(min-width: 768px) {
 	.blogs {
 		flex-wrap: nowrap;
+
+		article {
+			max-width: unset;
+
+			h3 {
+				font-size: 1.3em;
+				padding-bottom: 5em;
+			}
+		}
+		
+	}
+}
+
+@media(min-width: 1000px) {
+	.blogs {
+		margin: 30px auto;
+		max-width: 1200px;
+
+		article {
+			h3 {
+				padding-left: 25%;
+			}
+		}
 	}
 }

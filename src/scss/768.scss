@@ -41,32 +41,8 @@ main {
 	}
 }
 
-.cta {
-	a {
-		display: inline;
-		margin-top: 0;
-	}
-}
 
-.testimonials {
-	$size: 100px;
 
-	blockquote {
-		font-size: 1.6em;
-		padding: 40px 30px ($size * 0.75);
-	}
-
-	.profile {
-		height: $size;
-		bottom: calc(-1 * (5px + (#{$size} / 2)));
-		left: calc(50% - (#{$size} / 2));
-		width: $size;
-	}
-
-	@supports (grid-template-areas: '.') {
-		grid-row-gap: $size;
-	}
-}
 
 .content {
 	figure {

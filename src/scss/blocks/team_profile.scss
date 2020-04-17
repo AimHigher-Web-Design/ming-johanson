@@ -1,8 +1,11 @@
 .team {
 	display: flex;
-	flex-wrap: wrap;
+	justify-content: space-between;
+	overflow-x: auto;
 
 	.profile {
+		flex: 0 0 200px;
+		margin: 10px;
 		position: relative;
 		overflow: hidden;
 		width: 200px;
