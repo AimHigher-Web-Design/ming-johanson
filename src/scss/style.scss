@@ -12,11 +12,9 @@ Version: 2.0.0
 @import '320.scss';
 
 @media (min-width: 31rem) { // ~ 496px
-    @import '480.scss';
 }
 
 @media (min-width: 40rem) { // ~ 640px
-    @import '600.scss';
 }
 
 @media (min-width: 48rem) { // ~ 768px
@@ -27,6 +25,7 @@ Version: 2.0.0
     @import '1200.scss';
 }
 
+@import './layouts/blog.scss';
 @import './partials/header.scss';
 @import './partials/footer.scss';
 @import './blocks/banner.scss';
@@ -36,3 +35,6 @@ Version: 2.0.0
 @import './blocks/testimonials.scss';
 @import './blocks/cta.scss';
 @import './blocks/image_header.scss';
+@import './blocks/media.scss';
+
+@import './_woocommerce/main.scss';

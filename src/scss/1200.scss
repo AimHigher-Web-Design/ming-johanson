@@ -9,15 +9,3 @@ nav {
 		padding: 0;
 	}
 }
-
-
-
-.media {
-	iframe {
-		$ratio: 315/560;
-		$width: 500px;
-
-		height: $width * $ratio;
-		width: $width;
-	}
-}

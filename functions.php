@@ -2,6 +2,7 @@
     require_once(__DIR__ . '/functions/acf.php');
     require_once(__DIR__ . '/functions/wordpress.php');
     require_once(__DIR__ . '/functions/blog_block.php');
+    require_once(__DIR__ . '/functions/gutenberg.php');
 
     // Define Nav Menus
     register_nav_menus(array (
