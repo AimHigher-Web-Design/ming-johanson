@@ -13,7 +13,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="profile" href="http://gmpg.org/xfn/11" />
 
-        <link href="/wp-content/themes/ming-johanson/style.css?v=2020-04-27T12:00:01.575Z?v=2020-04-27T11:58:53.006Z?v=2020-04-18T02:13:32.581Z?v=2020-04-17T12:48:47.664Z?v=2020-04-17T09:43:06.792Z?v=2019-09-08T07:37:49.353Z?v=2019-09-06T13:50:05.364Z" rel="stylesheet" />
+        <link href="/wp-content/themes/ming-johanson/style.css?v=2019-09-08T07:37:49.353Z?v=2019-09-06T13:50:05.364Z" rel="stylesheet" />
         
         <title>Ming Johanson</title>
         <meta name="description" content="WordPress Template" />
@@ -37,8 +37,14 @@
     <header>
         <a href="/" class="site-logo">
             <?php
-            $logo = wp_get_attachment_image_src(get_theme_mod('custom_logo'), 'full')[0];
-            echo file_get_contents($logo);
+            $logo = wp_get_attachment_image_src(get_theme_mod('custom_logo'), 'full')[0];			
+			if(preg_match('/\.png$/', $logo)) {
+				echo '<img src="' . $logo . '" />';
+			}
+			else {
+				echo file_get_contents(preg_replace('/f_auto/i', 'f_svg', $logo));
+			}
+            
             ?>
         </a>
 
