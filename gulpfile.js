@@ -2,7 +2,7 @@ require('dotenv').config()
 
 //Variables
 var gulp = require('gulp')
-var sass = require('gulp-sass')
+var sass = require('gulp-dart-sass')
 var sourcemaps = require('gulp-sourcemaps')
 var prettier = require('gulp-prettier')
 var replace = require('gulp-replace')

@@ -8,7 +8,8 @@
  * @version 1.0
  */
 
-get_header(); ?>
+get_header();
+ ?>
 
 <div class="container main">
     <h1 class="page-title"><?php the_title(); ?></h1>
@@ -21,4 +22,5 @@ get_header(); ?>
     </div>
 </div>
 
-<?php get_footer();
+<?php
+ get_footer();

@@ -15,7 +15,7 @@
 
     function social_menu_icons($items, $args) {
         if($args->theme_location == 'social_menu') {
-            foreach($items as &$item) {
+            foreach($items as $item) {
                 $icon = file_get_contents(get_field('icon', $item));
 
                 if($icon) {

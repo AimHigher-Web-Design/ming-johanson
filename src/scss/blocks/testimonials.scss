@@ -66,7 +66,7 @@
 
 	@supports (grid-template-areas: '.') {
 		display: grid;
-		grid-template-columns: repeat(var(--testimonials), 1fr);
+		grid-template-columns: 1fr repeat(var(--testimonials), auto) 1fr;
 		grid-template-rows: max-content auto;
 		grid-row-gap: 50px;
 		grid-column-gap: 20px;
@@ -95,15 +95,7 @@
 			order: 2;
 
 			&:first-of-type {
-				justify-self: end;
-
-				&:last-of-type {
-					justify-self: center;
-				}
-			}
-
-			&:last-of-type {
-				justify-self: start;
+				grid-column-start: 2;
 			}
 		}
 	}

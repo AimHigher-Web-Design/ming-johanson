@@ -76,7 +76,6 @@
         </style>
         <?php 
     } add_action( 'login_enqueue_scripts', 'my_login_logo_one' );
-        
 
     //Duplicating Pages
     function rd_duplicate_post_as_draft(){

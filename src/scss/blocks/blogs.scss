@@ -47,13 +47,13 @@
 			width: auto;
 		}
 
-		&.business {
+		&.business, &.business-strategy {
 			.category {
 				color: $forest;
 			}
 		}
 
-		&.social {
+		&.social, &.social-media {
 			.category {
 				color: $water;
 			}
@@ -81,6 +81,13 @@
 			}
 		}
 		
+		&.content {
+			flex-wrap: wrap;
+
+			article {
+				flex: 1 0 300px;
+			}
+		}
 	}
 }
 
