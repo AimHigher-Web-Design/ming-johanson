@@ -52,6 +52,48 @@
 			opacity: 0.6;
 		}
 	}
+
+	form {
+		margin: 0 auto;
+
+		.wpforms-field-email,
+		.wpforms-field-text,
+		.wpforms-field-textarea {
+			label {
+
+				&:not(.filled) {
+					&:not(.wpforms-error) {
+						color: #000;
+					}
+				}
+			}
+
+			&:focus-within {
+				label {
+					&:not(.filled) {
+						&:not(.wpforms-error) {
+							color: inherit;
+						}
+					}
+				}
+			}
+		}
+
+		.wpforms-error {
+			color: inherit;
+		}
+
+		button {
+			background: #fff;
+			border-color: $primary;
+			color: $primary;
+
+			&:hover, &:focus {
+				background: $primary;
+				color: #fff;
+			}
+		}
+	}
 }
 
 .grid-container {
