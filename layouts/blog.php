@@ -25,9 +25,19 @@ get_header();
 				</article>
                     
                 <?php endwhile; 
-            endif; 
+
+                echo '</div>'; //End blogs container
+
+                ?> 
+
+                <ul class="pagination">
+                    <li><?php next_posts_link( 'Older posts' ); ?></li>
+                    <li><?php previous_posts_link( 'Newer posts' ); ?></li>
+                </ul>
+                
+            <?php endif; 
         ?>
-    </div>
+    
 </div>
 
 <?php

@@ -10,3 +10,28 @@
 		max-width: 1000px;
 	}
 }
+
+.pagination {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	flex-wrap: wrap;
+
+	li {
+		list-style: none;
+		margin: 0 20px;
+
+		a {
+			background: #fff;
+			border: 2px solid $primary;
+			color: $primary;
+			text-decoration: none;
+			padding: 5px 10px;
+
+			&:hover, &:focus {
+				background: $primary;
+				color: #fff;
+			}
+		}
+	}
+}
