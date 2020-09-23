@@ -6,8 +6,6 @@ footer {
 	// max-width: 900px;
 }
 
-
-
 main {
 	width: 100vw;
 	overflow-x: hidden;
@@ -56,5 +54,15 @@ main {
 	li {
 		list-style-type: none;
 		padding: 5px;
+	}
+}
+
+.wp-block-gallery {
+	&.is-cropped {
+		.blocks-gallery-item {
+			img {
+				max-height: 300px;
+			}
+		}
 	}
 }
